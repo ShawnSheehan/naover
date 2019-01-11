@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #000000 !important;
+  background-color: #1e272e !important;
   background: url('../assets/mars_planet.png') no-repeat;
   background-size: contain;
   background-position: bottom -400px center;
@@ -15,4 +15,10 @@ body {
   overflow: hidden;
   height: 100vh;
   font-family: 'Lato', sans-serif;
+  color: #d2dae2;
+}
+
+a {
+  color: #0fbcf9;
+  text-decoration: none;
 }

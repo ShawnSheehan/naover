@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { node } from 'prop-types';
 
 import StyledContainer from './styledContainer';
 
 export default class Container extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: node.isRequired,
   };
 
   state = {};

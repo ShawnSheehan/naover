@@ -1,3 +1,13 @@
 import React from 'react';
 
-export default () => <h1 style={{ color: 'white' }}>Test</h1>;
+import Box from '../layouts/box';
+
+export default () => (
+  <Box>
+    <Box flex="6">1</Box>
+    <Box flex="6" column>
+      <Box flex="6">2</Box>
+      <Box flex="6">2</Box>
+    </Box>
+  </Box>
+);

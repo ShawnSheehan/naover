@@ -1,15 +1,18 @@
+// import axios from 'axios';
 import { takeLatest, select, put, all } from 'redux-saga/effects';
 import * as ActionTypes from '../shared/types';
 
 const forwardLogic = {};
 
+const roverLogic = {};
+
 function* fetchRoverSaga() {
-  const newState = yield select(forwardLogic);
+  const newState = yield select(roverLogic);
   yield put({ type: ActionTypes.ROVER_FETCH, newState });
 }
 
 function* resetRoverSaga() {
-  const newState = yield select(forwardLogic);
+  const newState = yield select(roverLogic);
   yield put({ type: ActionTypes.ROVER_RESET, newState });
 }
 
