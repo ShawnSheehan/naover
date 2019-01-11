@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import * as ActionTypes from '../shared/ActionTypes';
+import * as ActionTypes from '../shared/types';
 
 // Actions
 export const resetRoverData = createAction(ActionTypes.ROVER_RESET);

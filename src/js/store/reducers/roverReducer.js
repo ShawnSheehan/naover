@@ -3,7 +3,7 @@ import {
   ROVER_RESET,
   FETCH_BY_CAMERA,
   FETCH_BY_DAY,
-} from '../shared/ActionTypes';
+} from '../shared/types';
 
 const initalState = {
   byCamera: null,
