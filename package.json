@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@storybook/addon-actions": "^4.1.6",
     "@storybook/addon-links": "^4.1.6",
     "@storybook/addon-options": "^4.1.6",
@@ -60,6 +61,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@babel/runtime": "^7.2.0",
     "axios": "^0.18.0",
     "loadable-components": "^2.2.3",
     "lodash": "^4.17.11",
@@ -74,6 +76,7 @@
     "redux-actions": "^2.6.4",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
+    "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.1.3"
   },

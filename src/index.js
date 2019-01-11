@@ -1,19 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-import App from './js/App';
-import store from './js/store';
+import configureStore from './store';
+import Root from './components/root';
+import rootSaga from './sagas/rootSaga';
 
-import './index.css';
+document.addEventListener('DOMContentLoaded', () => {
+  const store = configureStore();
+  store.runSaga(rootSaga);
 
-const Naover = () => (
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>
-);
-
-ReactDOM.render(<Naover />, document.getElementById('naover'));
+  ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+});

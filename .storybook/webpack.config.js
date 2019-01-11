@@ -21,7 +21,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      naover: path.resolve(__dirname, '../src/js'),
+      naover: path.resolve(__dirname, '../src'),
     },
   },
 };
