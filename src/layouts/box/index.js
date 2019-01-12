@@ -3,12 +3,19 @@ import styled from 'styled-components';
 import { node } from 'prop-types';
 
 const BoxWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #2f3640;
-  padding: 20px;
-  margin: 0;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  left: 50%;
+  margin: 0 auto;
+  min-width: 300px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
 `;
 
 const Box = props => {

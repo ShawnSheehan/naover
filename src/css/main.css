@@ -29,6 +29,18 @@ body {
   color: #d2dae2;
 }
 
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
 a {
   color: #0fbcf9;
   text-decoration: none;

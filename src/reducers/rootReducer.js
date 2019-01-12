@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import entitiesReducer from './entitiesReducer';
+import roverReducer from './roverReducer';
 
 const rootReducer = combineReducers({
-  entities: entitiesReducer,
+  rover: roverReducer,
 });
 
 export default rootReducer;
