@@ -12,6 +12,7 @@ const fadein = keyframes`
 `;
 
 const ContainerWrapper = styled.div`
+  position: relative;
   width: ${props => props.width && props.width};
   max-width: ${props => (props.fluid ? '100%' : '1200px')};
   margin-left: auto;

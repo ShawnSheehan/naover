@@ -8,11 +8,11 @@ const BoxWrapper = styled.div`
   justify-content: center;
   width: ${props => props.width && props.width};
   height: ${props => props.height && props.height};
-  background-color: ${props => props.color && props.color};
+  background-color: ${props => (props.color ? props.color : 'transparent')};
   padding: ${props => props.padding && props.padding};
-  margin: ${props => props.margin && props.margin};
   flex: ${props => (props.flex ? props.flex : null)};
   flex-direction: ${props => (props.column ? 'column' : 'row')};
+  margin: ${props => (props.padding ? props.padding : '0')};
 `;
 
 const StyledBox = props => {

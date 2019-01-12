@@ -1,43 +1,24 @@
-import {
-  ROVER_FETCH,
-  ROVER_RESET,
-  FETCH_BY_CAMERA,
-  FETCH_BY_DAY,
-} from '../shared/types';
+import * as ActionTypes from '../shared/types';
 
 const initalState = {
-  byCamera: null,
-  byDay: null,
   loading: false,
+  error: null,
 };
 
 export default function(state = initalState, action) {
   switch (action.type) {
-    case ROVER_FETCH:
+    case ActionTypes.ROVER_FETCH:
       return {
         ...state,
         loading: true,
+        entities: action.entities,
       };
 
-    case FETCH_BY_CAMERA:
+    case ActionTypes.ROVER_FAILURE:
       return {
         ...state,
-        byCamera: action.payload,
+        error: action.error,
         loading: false,
-      };
-
-    case FETCH_BY_DAY:
-      return {
-        ...state,
-        byDay: action.payload,
-        loading: false,
-      };
-
-    case ROVER_RESET:
-      return {
-        ...state,
-        byCamera: null,
-        byDay: null,
       };
 
     default:

@@ -1,3 +1,17 @@
-import Container from './container';
+import React, { Component } from 'react';
+import { node } from 'prop-types';
 
-export default Container;
+import StyledContainer from './style';
+
+export default class Container extends Component {
+  static propTypes = {
+    children: node.isRequired,
+  };
+
+  state = {};
+
+  render() {
+    const { children } = this.props;
+    return <StyledContainer {...this.props}>{children}</StyledContainer>;
+  }
+}

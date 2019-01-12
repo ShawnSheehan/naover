@@ -1,18 +1,28 @@
+import { createAction } from 'redux-actions';
 import * as ActionTypes from '../shared/types';
 
+function createAsyncAction(actionType) {
+  return {
+    request: createAction(
+      actionType.REQUEST,
+      data => data,
+      (data, meta) => meta,
+    ),
+    success: createAction(
+      actionType.SUCCESS,
+      data => data,
+      (data, meta) => meta,
+    ),
+    failure: createAction(
+      actionType.FAILURE,
+      data => data,
+      (data, meta) => meta,
+    ),
+  };
+}
+
 // Actions
-export const roverFetch = () => ({
-  type: ActionTypes.ROVER_FETCH,
-});
+export const fetchEntities = createAction(ActionTypes.ROVER_FETCH);
 
-export const roverReset = () => ({
-  type: ActionTypes.ROVER_RESET,
-});
-
-export const fetchByDay = () => ({
-  type: ActionTypes.FETCH_BY_DAY,
-});
-
-export const fetchByCamera = () => ({
-  type: ActionTypes.FETCH_BY_CAMERA,
-});
+// Entities
+export const enitities = createAsyncAction(ActionTypes.ENTITIES);
