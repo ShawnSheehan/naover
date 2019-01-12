@@ -23,11 +23,3 @@
 
 1 - test via jest
 `yarn run test || npm run test`
-
-## Storybook
-
-1 - run storybook server
-`yarn run sb-start || npm run sb-start`
-
-2 - build storybook
-`yarn run sb-build || npm run sb-build`
