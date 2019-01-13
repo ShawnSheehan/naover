@@ -7,7 +7,6 @@ import * as Components from './loadableRoutes';
 export default () => (
   <Switch>
     <Route path="/" exact component={Components.Intro} />
-    <Route path="/camera" exact component={Components.Camera} />
-    <Route path="/day" exact component={Components.Day} />
+    <Route path="/discover" exact component={Components.Discover} />
   </Switch>
 );

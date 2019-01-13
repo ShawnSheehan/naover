@@ -2,12 +2,12 @@ import React from 'react';
 
 import RouteMap from '../routes';
 import Container from '../layouts/container';
-import TopBar from '../layouts/topbar';
-import Menu from './menu';
+import Header from '../layouts/header';
+import Menu from './Menu';
 
 export default () => (
   <Container>
-    <TopBar brand="naover" />
+    <Header brand="naover" />
     <RouteMap />
     <Menu />
   </Container>

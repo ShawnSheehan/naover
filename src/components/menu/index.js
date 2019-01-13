@@ -50,7 +50,7 @@ const IconWrapper = styled.div`
   z-index: 10;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid #0fbcf9;
+  border: 1px solid #4b6464;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -58,7 +58,7 @@ const IconWrapper = styled.div`
   animation: ${props => (props.roll ? rotateOn : rotateOut)} 1s ease-in-out;
   animation-fill-mode: forwards;
   .fas {
-    color: #0fbcf9;
+    color: #4b6464;
     font-size: 32px;
   }
 `;

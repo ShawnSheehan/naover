@@ -2,28 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Dashboard from '../layouts/dashboard';
-import Box from '../layouts/box';
-import ImageList from '../components/ImageList';
-import ImageItem from '../components/ImageItem';
+import Carousel from '../components/Carousel';
 
 class IntroScreen extends Component {
-  state = {};
+  state = { filter: 'camera' };
 
   render() {
     const { entities } = this.props;
-
+    const { filter } = this.state;
     if (!entities) {
       console.log('Waiting...');
     }
     return (
-      <Dashboard>
-        <Box>
-          <ImageList>
-            {entities.slice(0, 12).map(e => (
-              <ImageItem src={e.img_src} />
-            ))}
-          </ImageList>
-        </Box>
+      <Dashboard filter={filter}>
+        <Carousel />
       </Dashboard>
     );
   }
