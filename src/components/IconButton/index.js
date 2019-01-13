@@ -13,8 +13,6 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-  position: absolute;
-  top: 0;
   .fas {
     color: #4b6464;
     font-size: 32px;

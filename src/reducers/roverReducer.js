@@ -21,6 +21,13 @@ export default function(state = initalState, action) {
         loading: false,
       };
 
+    case ActionTypes.ENTITIES_FILTER:
+      return {
+        ...state,
+        loading: false,
+        cameras: action.cameras,
+      };
+
     default:
       return state;
   }

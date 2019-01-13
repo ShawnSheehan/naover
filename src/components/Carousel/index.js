@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { shape, string, arrayOf } from 'prop-types';
 import styled from 'styled-components';
 import uuid from 'uuid';
 
@@ -38,17 +37,6 @@ const Slide = styled.div`
 `;
 
 class Carousel extends Component {
-  /* static propTypes = {
-    data: arrayOf(
-      shape({
-        name: string,
-        img_src: string,
-        camera: string,
-      }),
-    ).isRequired,
-  };
-  */
-
   state = {
     images: [
       'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg',
@@ -64,10 +52,7 @@ class Carousel extends Component {
     translateValue: 0,
   };
 
-  slideWidth = () => {
-    console.log('Test');
-    return document.querySelector('.slide').clientWidth;
-  };
+  slideWidth = () => document.querySelector('.slide').clientWidth;
 
   prevSlide = () => {
     const { currentIndex } = this.state;
@@ -95,12 +80,12 @@ class Carousel extends Component {
   };
 
   render() {
-    //  const { data } = this.props;
-    const { images, translateValue } = this.state;
+    const { data } = this.props;
+    const { translateValue } = this.state;
     return (
       <CarouselWrapper>
         <CarouselSlide value={translateValue}>
-          {images.map(img => (
+          {data.map(img => (
             <Slide key={uuid.v4()} src={img} className="slide" />
           ))}
         </CarouselSlide>

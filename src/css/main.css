@@ -26,7 +26,7 @@ body {
   overflow: hidden;
   height: 100vh;
   font-family: 'Lato', sans-serif;
-  color: #d2dae2;
+  color: #4b6464;
 }
 
 ol,
@@ -42,6 +42,6 @@ li {
 }
 
 a {
-  color: #0fbcf9;
+  color: #4b6464;
   text-decoration: none;
 }

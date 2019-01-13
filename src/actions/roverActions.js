@@ -23,6 +23,7 @@ function createAsyncAction(actionType) {
 
 // Actions
 export const fetchEntities = createAction(ActionTypes.ROVER_FETCH);
+export const filterEntities = createAction(ActionTypes.ENTITIES_FILTER);
 
 // Entities
 export const enitities = createAsyncAction(ActionTypes.ENTITIES);

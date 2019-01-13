@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
-// import { bool, string, func } from 'prop-types';
+import { number, arrayOf } from 'prop-types';
 
 export default class Chart extends Component {
-  static propTypes = {};
+  static propTypes = {
+    chartData: arrayOf(number),
+  };
+
+  static defaultProps = {
+    chartData: [],
+  };
 
   state = {};
 
   render() {
+    const { chartData } = this.props;
     const data = {
-      labels: ['Red', 'Green', 'Yellow'],
+      labels: ['Red', 'Blue', 'Yellow', 'Green'],
       datasets: [
         {
-          data: [300, 50, 100],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          data: chartData,
+          backgroundColor: ['#ef5777', '#4bcffa', '#FFCE56', '#0be881'],
+          hoverBackgroundColor: ['#ef5777', '#4bcffa', '#FFCE56', '#0be881'],
         },
       ],
     };
+    console.log(chartData);
     return (
       <Pie
         data={data}
@@ -27,6 +35,9 @@ export default class Chart extends Component {
           maintainAspectRatio: false,
           legend: {
             display: false,
+          },
+          onClick(evt, item) {
+            console.log(item[0]._model.label);
           },
         }}
       />

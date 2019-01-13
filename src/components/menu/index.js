@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { connect } from 'react-redux';
+import countBy from 'lodash/countBy';
+
+import Box from '../../layouts/box';
+import Chart from '../Chart';
+// import IconButton from '../IconButton';
 
 const rotateOn = keyframes`
 from {
@@ -74,7 +80,6 @@ const MenuWrapper = styled.div`
   text-decoration: none;
   cursor: pointer;
   background-color: #ffffff;
-  justify-content: center;
   align-items: center;
   display: flex;
   visibility: ${props => (props.roll ? 'visible' : 'hidden')};
@@ -82,9 +87,11 @@ const MenuWrapper = styled.div`
   animation: ${props => (props.roll ? slideIn : slideOut)} 500ms linear;
   animation-fill-mode: forwards;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  flex-flow: row wrap;
 `;
 
-export default class Menu extends Component {
+class Menu extends Component {
   static propTypes = {};
 
   state = {
@@ -98,13 +105,38 @@ export default class Menu extends Component {
 
   render() {
     const { active } = this.state;
+    const { cameras } = this.props;
+    const curiosity = countBy(cameras, 'name');
+    const data = Array.from(Object.keys(curiosity), k => curiosity[k]);
+    console.log(data);
     return (
       <React.Fragment>
         <IconWrapper onClick={this.onActive} roll={active}>
           <i className="fas fa-plus" />
         </IconWrapper>
-        <MenuWrapper roll={active}>Menu</MenuWrapper>
+        <MenuWrapper roll={active}>
+          <Box title="picture by camera" subtitle={Date.now()}>
+            <Chart chartData={data} />
+          </Box>
+          <Box title="picture by day" subtitle={Date.now()}>
+            <Chart chartData={data} />
+          </Box>
+        </MenuWrapper>
       </React.Fragment>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  entities: state.rover.entities,
+  cameras: state.rover.cameras,
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Menu);
+
+/* 
+{active && <IconButton icon="fas fa-sync-alt" />}
+*/

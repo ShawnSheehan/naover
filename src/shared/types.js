@@ -1,3 +1,4 @@
 export const ENTITIES = 'ENTITIES';
+export const ENTITIES_FILTER = 'ENTITIES_FILTER';
 export const ROVER_FETCH = 'ROVER_FETCH';
 export const ROVER_FAILURE = 'ROVER_FAILURE';
