@@ -19,8 +19,8 @@ const CarouselSlide = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  transform: translate-x(${props => props.value}px);
-  transition: 'transform ease-out 0.45s';
+  transform: translateX(${props => props.value}px);
+  transition: transform ease-out 0.45s;
 `;
 
 const Slide = styled.div`
@@ -38,23 +38,11 @@ const Slide = styled.div`
 
 class Carousel extends Component {
   state = {
-    images: [
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/city.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/mountains.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/redsky.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg',
-      'https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/tree-of-life.jpg',
-    ],
     currentIndex: 0,
     translateValue: 0,
   };
 
-  slideWidth = () => document.querySelector('.slide').clientWidth;
-
-  prevSlide = () => {
+  previous = () => {
     const { currentIndex } = this.state;
     if (currentIndex === 0) return;
 
@@ -64,20 +52,23 @@ class Carousel extends Component {
     }));
   };
 
-  nextSlide = () => {
-    const { currentIndex, images } = this.state;
-
-    if (currentIndex === images.length - 1) {
+  next = () => {
+    const { currentIndex } = this.state;
+    const { data } = this.props;
+    if (currentIndex === data.length - 1) {
       this.setState({
         currentIndex: 0,
         translateValue: 0,
       });
     }
+
     this.setState(prevState => ({
       currentIndex: prevState.currentIndex + 1,
       translateValue: prevState.translateValue + -this.slideWidth(),
     }));
   };
+
+  slideWidth = () => document.querySelector('.slide').clientWidth;
 
   render() {
     const { data } = this.props;
@@ -85,11 +76,11 @@ class Carousel extends Component {
     return (
       <CarouselWrapper>
         <CarouselSlide value={translateValue}>
-          {data.map(img => (
+          {data.slice(0, 10).map(img => (
             <Slide key={uuid.v4()} src={img} className="slide" />
           ))}
         </CarouselSlide>
-        <IconButton onAction={this.nextSlide} icon="fas fa-chevron-right" />
+        <IconButton onAction={this.next} icon="fas fa-chevron-right" />
       </CarouselWrapper>
     );
   }

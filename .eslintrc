@@ -41,7 +41,8 @@
     "no-useless-concat": 0,
     "react/jsx-indent": 0,
     "import/named": 0,
-    "no-underscore-dangle": 0
+    "no-underscore-dangle": 0,
+    "prefer-destructuring": 0
   },
   "overrides": [
     {

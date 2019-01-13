@@ -108,7 +108,6 @@ class Menu extends Component {
     const { cameras } = this.props;
     const curiosity = countBy(cameras, 'name');
     const data = Array.from(Object.keys(curiosity), k => curiosity[k]);
-    console.log(data);
     return (
       <React.Fragment>
         <IconWrapper onClick={this.onActive} roll={active}>
