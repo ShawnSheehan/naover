@@ -30,7 +30,7 @@ const Slide = styled.div`
   background: url(${props => props.src}) no-repeat;
   background-size: cover;
   background-position: '50% 60%';
-  opacity: 0.6;
+  opacity: 0.8;
   &:hover {
     opacity: 1;
   }
@@ -74,14 +74,19 @@ class Carousel extends Component {
     const { data } = this.props;
     const { translateValue } = this.state;
     return (
-      <CarouselWrapper>
-        <CarouselSlide value={translateValue}>
-          {data.slice(0, 10).map(img => (
-            <Slide key={uuid.v4()} src={img} className="slide" />
-          ))}
-        </CarouselSlide>
-        <IconButton onAction={this.next} icon="fas fa-chevron-right" />
-      </CarouselWrapper>
+      <React.Fragment>
+        <CarouselWrapper>
+          <CarouselSlide value={translateValue}>
+            {data.slice(0, 10).map(img => (
+              <Slide key={uuid.v4()} src={img} className="slide" />
+            ))}
+          </CarouselSlide>
+        </CarouselWrapper>
+        <div className="ctrl-wrap">
+          <IconButton onAction={this.previous} icon="fas fa-chevron-left" />
+          <IconButton onAction={this.next} icon="fas fa-chevron-right" />
+        </div>
+      </React.Fragment>
     );
   }
 }
