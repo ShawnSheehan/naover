@@ -94,13 +94,13 @@ const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   return {
     id,
-    image: state.rover.entities.find(o => o.id === Number(id)),
+    image: state.naover.entities.find(o => o.id === Number(id))
   };
 };
 
 export default withRouter(
   connect(
     mapStateToProps,
-    null,
-  )(DiscoverScreen),
+    null
+  )(DiscoverScreen)
 );

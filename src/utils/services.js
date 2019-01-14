@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { apiKEY, baseURL } from '../shared/constants';
+import api from './config';
 
 /* API Does Not Seem To Support A Query For Date Ranges??? */
 
 export default {
-  getInitialEntities: sol => axios.get(`${baseURL}sol=${sol}${apiKEY}`),
-  getEntititesBySol: sol => axios.get(`${baseURL}sol=${sol}${apiKEY}`),
+  getInitialEntities: sol => axios.get(`${api.baseURL}sol=${sol}${api.apiKEY}`),
+  getEntititesBySol: sol => axios.get(`${api.baseURL}sol=${sol}${api.apiKEY}`),
   getEntititesByAll: (sol, cam) =>
-    axios.get(`${baseURL}sol=${sol}&camera=${cam}${apiKEY}`),
+    axios.get(`${api.baseURL}sol=${sol}&camera=${cam}${api.apiKEY}`)
 };

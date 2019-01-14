@@ -51,16 +51,16 @@ const Tile = props => {
 
 Tile.propTypes = {
   image: string,
-  route: string,
+  route: string
 };
 
 Tile.defaultProps = {
   image: null,
-  route: '/',
+  route: '/'
 };
 
 const mapStateToProps = state => ({
-  loading: state.rover.loading,
+  loading: state.naover.loading
 });
 
 export default withRouter(connect(mapStateToProps)(Tile));

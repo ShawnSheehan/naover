@@ -32,18 +32,18 @@ const Spinner = ({ loading, propsLoading }) => (
 
 Spinner.propTypes = {
   loading: bool.isRequired,
-  propsLoading: bool,
+  propsLoading: bool
 };
 
 Spinner.defaultProps = {
-  propsLoading: false,
+  propsLoading: false
 };
 
 const mapStateToProps = state => ({
-  loading: state.rover.loading,
+  loading: state.naover.loading
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(Spinner);

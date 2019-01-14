@@ -1,11 +1,11 @@
 /* Enitities Selector */
 
-export const entities = state => state.rover.entities;
+export const entities = state => state.naover;
 
 /* Cameras Selector */
 
-export const cameras = state => state.rover.entities.map(c => c.camera);
+export const cameras = state => state.naover.entities.map(c => c.camera);
 
 /* Days Selector */
 
-export const days = state => state.rover.entities.map(c => c.sol);
+export const days = state => state.naover.entities.map(c => c.sol);

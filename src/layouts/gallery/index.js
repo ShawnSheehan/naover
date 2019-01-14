@@ -34,11 +34,11 @@ const Gallery = props => {
 };
 
 Gallery.proptTypes = {
-  children: node.isRequired,
+  children: node.isRequired
 };
 
 const mapStateToProps = state => ({
-  loading: state.rover.loading,
+  loading: state.naover.loading
 });
 
 export default connect(mapStateToProps)(Gallery);

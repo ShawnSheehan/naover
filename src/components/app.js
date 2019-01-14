@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { fetchEntities } from '../actions/roverActions';
+import * as Actions from '../actions';
 import { RouteMap } from '../routes';
 import Container from '../layouts/container';
 import Header from '../layouts/header';
@@ -18,23 +18,37 @@ class App extends Component {
   }
 
   render() {
+    const { selectAll, selectDay, onLoad, cameras, sols } = this.props;
     return (
       <Container>
         <Header brand="naover" />
         <RouteMap />
-        <Menu />
+        <Menu
+          selectDay={selectDay}
+          selectAll={selectAll}
+          resetAll={onLoad}
+          cameras={cameras}
+          sols={sols}
+        />
       </Container>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  entities: state.rover.entities,
+  entities: state.naover.entities,
+  cameras: state.naover.cameras,
+  sols: state.naover.sols
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
-    { onLoad: fetchEntities },
-  )(App),
+    {
+      onLoad: Actions.initEntities,
+      selectDay: Actions.selectDay,
+      selectAll: Actions.selectAll,
+      resetAll: Actions.initEntities
+    }
+  )(App)
 );

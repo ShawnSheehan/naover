@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import roverReducer from './roverReducer';
+import naoverReducer from './naoverReducer';
 
 const rootReducer = combineReducers({
-  rover: roverReducer,
+  naover: naoverReducer
 });
 
 export default rootReducer;

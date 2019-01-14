@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { connect } from 'react-redux';
 
 import Box from '../../layouts/box';
 import Chart from '../Chart';
 import IconButton from '../IconButton';
-import {
-  filterByDay,
-  filterByAll,
-  fetchEntities,
-} from '../../actions/roverActions';
 
 const rotateOn = keyframes`
 from {
@@ -99,12 +93,7 @@ class Menu extends Component {
   static propTypes = {};
 
   state = {
-    active: false,
-  };
-
-  onSelect = () => {
-    const { filterCamera } = this.props;
-    filterCamera();
+    active: false
   };
 
   onActive = () => {
@@ -114,7 +103,7 @@ class Menu extends Component {
 
   render() {
     const { active } = this.state;
-    const { cameras, days, filterDay, filterAll, resetAll } = this.props;
+    const { cameras, sols, selectDay, selectAll, resetAll } = this.props;
 
     return (
       <React.Fragment>
@@ -125,9 +114,9 @@ class Menu extends Component {
           <Box title="Rover Analytics" subtitle={Date.now()}>
             <Chart
               cam={cameras}
-              sol={days}
-              selectDay={filterDay}
-              selectAll={filterAll}
+              sol={sols}
+              selectDay={selectDay}
+              selectAll={selectAll}
             />
           </Box>
           <div className="reset-icon">
@@ -139,12 +128,4 @@ class Menu extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  cameras: state.rover.cameras,
-  days: state.rover.days,
-});
-
-export default connect(
-  mapStateToProps,
-  { filterDay: filterByDay, filterAll: filterByAll, resetAll: fetchEntities },
-)(Menu);
+export default Menu;

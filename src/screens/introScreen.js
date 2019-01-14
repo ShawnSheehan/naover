@@ -24,10 +24,10 @@ class IntroScreen extends Component {
 }
 
 const mapStateToProps = state => ({
-  entities: state.rover.entities || [],
+  entities: state.naover.entities || []
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  null
 )(IntroScreen);
