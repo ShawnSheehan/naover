@@ -5,11 +5,13 @@ export const fetchEntities = () => ({
   type: ActionTypes.ENTITIES_LOADING,
 });
 
-export const filterByCamera = () => ({
-  type: ActionTypes.ENTITIES_FILTER_CAMERAS,
+export const filterByAll = (sol, cam) => ({
+  type: ActionTypes.ENTITIES_LOADING,
+  sol,
+  cam,
 });
 
-export const filterByDay = day => ({
-  type: ActionTypes.ENTITIES_FILTER_DAYS,
-  day,
+export const filterByDay = sol => ({
+  type: ActionTypes.ENTITIES_LOADING,
+  sol,
 });

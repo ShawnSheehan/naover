@@ -25,6 +25,36 @@ export function* initDaySortingSaga() {
   yield put({ type: ActionTypes.ENTITIES_FILTER_DAYS, days: sols });
 }
 
+export function* fetchByDaySaga(action) {
+  const response = yield call(services.getEntititesBySol, action.sol);
+  try {
+    yield put({
+      type: ActionTypes.ENTITIES_SELECT_DAYS_SUCCESS,
+      entities: response.data.photos,
+    });
+  } catch (error) {
+    yield put({ type: ActionTypes.ENTITIES_FAILURE, error });
+  }
+}
+
+/* Filter By Sol & Cam */
+
+export function* fetchByAllSaga(action) {
+  const response = yield call(
+    services.getEntititesByAll,
+    action.sol,
+    action.cam,
+  );
+  try {
+    yield put({
+      type: ActionTypes.ENTITIES_SELECT_ALL_SUCCESS,
+      entities: response.data.photos,
+    });
+  } catch (error) {
+    yield put({ type: ActionTypes.ENTITIES_FAILURE, error });
+  }
+}
+
 /* Initial State */
 
 export function* initSaga() {
@@ -39,7 +69,7 @@ export function* initSaga() {
     const entities = flatMap(flatten, o => o.photos);
     yield put({ type: ActionTypes.ENTITIES_FETCH_SUCCESS, entities });
   } catch (error) {
-    yield put({ type: ActionTypes.ENTITIES_FETCH_FAILURE, error });
+    yield put({ type: ActionTypes.ENTITIES_FAILURE, error });
   }
   yield fork(initCamSortingSaga);
   yield fork(initDaySortingSaga);

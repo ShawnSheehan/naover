@@ -4,10 +4,24 @@ import { PieChart, Pie, Legend } from 'recharts';
 export default class Chart extends Component {
   static propTypes = {};
 
-  state = {};
+  state = {
+    camName: '',
+    dayName: '',
+  };
 
-  onSelect = e => {
-    console.log(e.name);
+  onDaySelect = e => {
+    const { selectDay } = this.props;
+    this.setState({ dayName: e.name });
+    selectDay(e.name);
+  };
+
+  onAllSelect = e => {
+    const { dayName, camName } = this.state;
+    const { selectAll } = this.props;
+    this.setState({ camName: e.name });
+    if (dayName) {
+      selectAll(dayName, camName);
+    }
   };
 
   render() {
@@ -22,7 +36,7 @@ export default class Chart extends Component {
           cy={250}
           outerRadius={120}
           fill="#8884d8"
-          onClick={this.onSelect}
+          onClick={this.onAllSelect}
           label
           dataKey="value"
         />
@@ -34,7 +48,7 @@ export default class Chart extends Component {
           outerRadius={180}
           fill="#82ca9d"
           label
-          onClick={this.onSelect}
+          onClick={this.onDaySelect}
           dataKey="value"
         />
       </PieChart>

@@ -20,7 +20,7 @@ export default function(state = initalState, action) {
         entities: action.entities,
       };
 
-    case ActionTypes.ENTITIES_FETCH_FAILURE:
+    case ActionTypes.ENTITIES_FAILURE:
       return {
         ...state,
         error: action.error,
@@ -47,16 +47,16 @@ export default function(state = initalState, action) {
         days: action.days,
       };
 
-    case ActionTypes.ENTITIES_FILTER_SUCCESS:
+    case ActionTypes.ENTITIES_SELECT_DAYS_SUCCESS:
       return {
         ...state,
         loading: false,
+        entities: action.entities,
       };
 
-    case ActionTypes.ENTITIES_FILTER_FAILURE:
+    case ActionTypes.ENTITIES_FILTER_SUCCESS:
       return {
         ...state,
-        error: action.error,
         loading: false,
       };
 

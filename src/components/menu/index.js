@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 
 import Box from '../../layouts/box';
 import Chart from '../Chart';
-import filterByCamera from '../../actions/roverActions';
+import IconButton from '../IconButton';
+import {
+  filterByDay,
+  filterByAll,
+  fetchEntities,
+} from '../../actions/roverActions';
 
 const rotateOn = keyframes`
 from {
@@ -109,7 +114,7 @@ class Menu extends Component {
 
   render() {
     const { active } = this.state;
-    const { cameras, days } = this.props;
+    const { cameras, days, filterDay, filterAll, resetAll } = this.props;
 
     return (
       <React.Fragment>
@@ -118,8 +123,16 @@ class Menu extends Component {
         </IconWrapper>
         <MenuWrapper roll={active}>
           <Box title="Rover Analytics" subtitle={Date.now()}>
-            <Chart cam={cameras} sol={days} />
+            <Chart
+              cam={cameras}
+              sol={days}
+              selectDay={filterDay}
+              selectAll={filterAll}
+            />
           </Box>
+          <div className="reset-icon">
+            <IconButton icon="fas fa-sync-alt" onAction={resetAll} />
+          </div>
         </MenuWrapper>
       </React.Fragment>
     );
@@ -133,5 +146,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { filterCamera: filterByCamera },
+  { filterDay: filterByDay, filterAll: filterByAll, resetAll: fetchEntities },
 )(Menu);

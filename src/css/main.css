@@ -56,3 +56,10 @@ a {
 .recharts-legend-wrapper {
   left: 35px !important;
 }
+
+.reset-icon {
+  position: absolute !important;
+  z-index: 9 !important;
+  bottom: 50px !important;
+  left: 90px !important;
+}
