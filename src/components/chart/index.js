@@ -1,47 +1,43 @@
 import React, { Component } from 'react';
-import { Pie } from 'react-chartjs-2';
-import { number, arrayOf } from 'prop-types';
+import { PieChart, Pie, Legend } from 'recharts';
 
 export default class Chart extends Component {
-  static propTypes = {
-    chartData: arrayOf(number),
-  };
-
-  static defaultProps = {
-    chartData: [],
-  };
+  static propTypes = {};
 
   state = {};
 
-  render() {
-    const { chartData } = this.props;
+  onSelect = e => {
+    console.log(e.name);
+  };
 
-    const data = {
-      labels: ['Red', 'Blue', 'Yellow', 'Green'],
-      datasets: [
-        {
-          data: chartData,
-          backgroundColor: ['#ef5777', '#4bcffa', '#FFCE56', '#0be881'],
-          hoverBackgroundColor: ['#ef5777', '#4bcffa', '#FFCE56', '#0be881'],
-        },
-      ],
-    };
+  render() {
+    const { sol, cam } = this.props;
+
     return (
-      <Pie
-        data={data}
-        width={100}
-        height={50}
-        options={{
-          maintainAspectRatio: false,
-          legend: {
-            display: false,
-          },
-          onClick() {
-            // console.log(item[0]._model.label);
-            return null;
-          },
-        }}
-      />
+      <PieChart width={500} height={500}>
+        <Legend verticalAlign="top" height={36} width={450} />
+        <Pie
+          data={cam}
+          cx={250}
+          cy={250}
+          outerRadius={120}
+          fill="#8884d8"
+          onClick={this.onSelect}
+          label
+          dataKey="value"
+        />
+        <Pie
+          data={sol}
+          cx={250}
+          cy={250}
+          innerRadius={140}
+          outerRadius={180}
+          fill="#82ca9d"
+          label
+          onClick={this.onSelect}
+          dataKey="value"
+        />
+      </PieChart>
     );
   }
 }

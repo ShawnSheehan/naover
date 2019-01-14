@@ -52,3 +52,7 @@ a {
   background-position: bottom -400px center;
   background-color: rgba(30, 39, 46, 0.8);
 }
+
+.recharts-legend-wrapper {
+  left: 35px !important;
+}

@@ -1,5 +1,7 @@
 import { call, put, select, all, fork } from 'redux-saga/effects';
 import flatMap from 'lodash/flatMap';
+import countBy from 'lodash/countBy';
+import map from 'lodash/map';
 
 import * as ActionTypes from '../shared/types';
 import * as selectors from '../utils/selectors';
@@ -9,7 +11,18 @@ import services from '../utils/services';
 
 export function* initCamSortingSaga() {
   const cameras = yield select(selectors.cameras);
-  yield put({ type: ActionTypes.ENTITIES_FILTER_CAMERAS, cameras });
+  const camObj = countBy(cameras, 'name');
+  const cams = map(camObj, (value, name) => ({ name, value }));
+  yield put({ type: ActionTypes.ENTITIES_FILTER_CAMERAS, cameras: cams });
+}
+
+/* Initial Day Selector */
+
+export function* initDaySortingSaga() {
+  const days = yield select(selectors.days);
+  const solObj = countBy(days);
+  const sols = map(solObj, (value, name) => ({ name, value }));
+  yield put({ type: ActionTypes.ENTITIES_FILTER_DAYS, days: sols });
 }
 
 /* Initial State */
@@ -29,11 +42,5 @@ export function* initSaga() {
     yield put({ type: ActionTypes.ENTITIES_FETCH_FAILURE, error });
   }
   yield fork(initCamSortingSaga);
-}
-
-/* Initial Day Selector */
-
-export function* initialDaySelectorSaga() {
-  const days = yield select(selectors.days);
-  yield put({ type: ActionTypes.ENTITIES_FILTER_DAYS, days });
+  yield fork(initDaySortingSaga);
 }

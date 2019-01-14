@@ -8,4 +8,4 @@ export const cameras = state => state.rover.entities.map(c => c.camera);
 
 /* Days Selector */
 
-export const days = state => state.rover.entities.map(c => c.earth_date);
+export const days = state => state.rover.entities.map(c => c.sol);

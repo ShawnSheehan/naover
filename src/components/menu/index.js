@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { connect } from 'react-redux';
-import countBy from 'lodash/countBy';
-import toArray from 'lodash/toArray';
 
 import Box from '../../layouts/box';
 import Chart from '../Chart';
@@ -111,20 +109,16 @@ class Menu extends Component {
 
   render() {
     const { active } = this.state;
-    const { cameras } = this.props;
-    /* Camera Chart Data */
-    const camCount = toArray(countBy(cameras, 'name'));
+    const { cameras, days } = this.props;
+
     return (
       <React.Fragment>
         <IconWrapper onClick={this.onActive} roll={active}>
           <i className="fas fa-plus" />
         </IconWrapper>
         <MenuWrapper roll={active}>
-          <Box title="picture by camera" subtitle={Date.now()}>
-            <Chart chartData={camCount} />
-          </Box>
-          <Box title="picture by day" subtitle={Date.now()}>
-            <Chart chartData={[2, 67, 65, 210]} />
+          <Box title="Rover Analytics" subtitle={Date.now()}>
+            <Chart cam={cameras} sol={days} />
           </Box>
         </MenuWrapper>
       </React.Fragment>

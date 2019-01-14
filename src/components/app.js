@@ -11,8 +11,10 @@ import Menu from './Menu';
 class App extends Component {
   /* Initialize State Via API */
   componentDidMount() {
-    const { onLoad } = this.props;
-    onLoad();
+    const { onLoad, entities } = this.props;
+    if (!entities) {
+      onLoad();
+    }
   }
 
   render() {
@@ -26,9 +28,13 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  entities: state.rover.entities,
+});
+
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     { onLoad: fetchEntities },
   )(App),
 );
