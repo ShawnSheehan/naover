@@ -1,24 +1,8 @@
 import axios from 'axios';
+import { apiKEY, baseURL } from '../shared/constants';
 
-const apiBaseUrl =
-  'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2287&api_key=z2IfhXlVEzHoA6TFYyd97ODUEgWZJsk5mfEpVsJv';
-
-const api = axios.create({
-  baseURL: apiBaseUrl,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-const apiCall = config => (data, options) =>
-  api({
-    method: 'GET',
-    ...options,
-    ...config(data),
-  });
+/* API Does Not Seem To Support A Query For Date Ranges??? */
 
 export default {
-  fetchRover: apiCall(() => ({
-    url: apiBaseUrl,
-  })),
+  getInitialEntities: sol => axios.get(`${baseURL}${sol}${apiKEY}`),
 };

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { connect } from 'react-redux';
 import countBy from 'lodash/countBy';
+import toArray from 'lodash/toArray';
 
 import Box from '../../layouts/box';
 import Chart from '../Chart';
-// import IconButton from '../IconButton';
+import filterByCamera from '../../actions/roverActions';
 
 const rotateOn = keyframes`
 from {
@@ -98,6 +99,11 @@ class Menu extends Component {
     active: false,
   };
 
+  onSelect = () => {
+    const { filterCamera } = this.props;
+    filterCamera();
+  };
+
   onActive = () => {
     const { active } = this.state;
     this.setState({ active: !active });
@@ -106,8 +112,8 @@ class Menu extends Component {
   render() {
     const { active } = this.state;
     const { cameras } = this.props;
-    const curiosity = countBy(cameras, 'name');
-    const data = Array.from(Object.keys(curiosity), k => curiosity[k]);
+    /* Camera Chart Data */
+    const camCount = toArray(countBy(cameras, 'name'));
     return (
       <React.Fragment>
         <IconWrapper onClick={this.onActive} roll={active}>
@@ -115,10 +121,10 @@ class Menu extends Component {
         </IconWrapper>
         <MenuWrapper roll={active}>
           <Box title="picture by camera" subtitle={Date.now()}>
-            <Chart chartData={data} />
+            <Chart chartData={camCount} />
           </Box>
           <Box title="picture by day" subtitle={Date.now()}>
-            <Chart chartData={data} />
+            <Chart chartData={[2, 67, 65, 210]} />
           </Box>
         </MenuWrapper>
       </React.Fragment>
@@ -127,15 +133,11 @@ class Menu extends Component {
 }
 
 const mapStateToProps = state => ({
-  entities: state.rover.entities,
   cameras: state.rover.cameras,
+  days: state.rover.days,
 });
 
 export default connect(
   mapStateToProps,
-  null,
+  { filterCamera: filterByCamera },
 )(Menu);
-
-/* 
-{active && <IconButton icon="fas fa-sync-alt" />}
-*/

@@ -72,7 +72,9 @@ module.exports = {
     ],
   },
   devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
     historyApiFallback: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebPackPlugin({

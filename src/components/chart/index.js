@@ -15,6 +15,7 @@ export default class Chart extends Component {
 
   render() {
     const { chartData } = this.props;
+
     const data = {
       labels: ['Red', 'Blue', 'Yellow', 'Green'],
       datasets: [
@@ -35,8 +36,9 @@ export default class Chart extends Component {
           legend: {
             display: false,
           },
-          onClick(evt, item) {
-            console.log(item[0]._model.label);
+          onClick() {
+            // console.log(item[0]._model.label);
+            return null;
           },
         }}
       />

@@ -25,11 +25,16 @@ const ContainerWrapper = styled.div`
   position: relative;
   -webkit-overflow-scrolling: touch;
   animation: ${fadein} 3s;
+  opacity: 1;
 `;
 
 const Container = props => {
   const { children } = props;
-  return <ContainerWrapper {...props}>{children}</ContainerWrapper>;
+  return (
+    <ContainerWrapper {...props} className="container">
+      {children}
+    </ContainerWrapper>
+  );
 };
 
 Container.propTypes = {

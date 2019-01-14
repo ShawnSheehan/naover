@@ -1,4 +1,4 @@
-import loadable from 'loadable-components';
+import loadable from '@loadable/component';
 
 /**
  * NAOVER For PULILABS

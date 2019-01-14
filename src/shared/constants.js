@@ -1,6 +1,4 @@
-const API_KEY = 'z2IfhXlVEzHoA6TFYyd97ODUEgWZJsk5mfEpVsJv';
+export const baseURL =
+  'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=';
 
-const API_URL =
-  'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&';
-
-export default { API_KEY, API_URL };
+export const apiKEY = '&api_key=z2IfhXlVEzHoA6TFYyd97ODUEgWZJsk5mfEpVsJv';

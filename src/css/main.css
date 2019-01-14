@@ -46,12 +46,9 @@ a {
   text-decoration: none;
 }
 
-.ctrl-wrap {
-  width: 55vw;
-  z-index: 3;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  left: 21vw;
+.container {
+  background: url('../assets/mars_planet.png') no-repeat;
+  background-size: contain;
+  background-position: bottom -400px center;
+  background-color: rgba(30, 39, 46, 0.8);
 }

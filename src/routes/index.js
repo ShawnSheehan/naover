@@ -1,12 +1,14 @@
 import React from 'react';
-import Route from 'react-router-dom/Route';
-import Switch from 'react-router-dom/Switch';
+import { Route, Switch } from 'react-router-dom';
 
-import * as Components from './loadableRoutes';
+import IntroScreen from '../screens/IntroScreen';
+import DiscoverScreen from '../screens/DiscoverScreen';
 
-export default () => (
-  <Switch>
-    <Route path="/" exact component={Components.Intro} />
-    <Route path="/discover" exact component={Components.Discover} />
-  </Switch>
+export const RouteMap = () => (
+  <div>
+    <Switch>
+      <Route path="/" exact component={IntroScreen} />
+      <Route path="/discover/:id" exact component={DiscoverScreen} />
+    </Switch>
+  </div>
 );

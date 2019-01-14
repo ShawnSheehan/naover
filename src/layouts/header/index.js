@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { string } from 'prop-types';
 
 const HeaderWrapper = styled.div`
@@ -18,7 +19,9 @@ const HeaderWrapper = styled.div`
 
 const Header = ({ brand }) => (
   <HeaderWrapper>
-    <div className="brand">{brand}</div>
+    <NavLink to="/">
+      <div className="brand">{brand}</div>
+    </NavLink>
   </HeaderWrapper>
 );
 
