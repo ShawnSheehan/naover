@@ -111,16 +111,23 @@ class Menu extends Component {
       selectAll,
       resetAll,
       selectCam,
-      location
+      location,
+      history
     } = this.props;
     const { pathname } = location;
 
     // I Have Set The Menu To Only Appear On Gallery View For Now
     return (
       <React.Fragment>
-        <IconWrapper onClick={this.onActive} roll={active}>
-          <i className="fas fa-plus" />
-        </IconWrapper>
+        {pathname.includes('discover') ? (
+          <IconWrapper onClick={() => history.push('/')}>
+            <i className="fas fa-chevron-left" />
+          </IconWrapper>
+        ) : (
+          <IconWrapper onClick={this.onActive} roll={active}>
+            <i className="fas fa-plus" />
+          </IconWrapper>
+        )}
         {!pathname.includes('discover') && active && (
           <MenuWrapper roll={active} pathname={pathname}>
             <Box title="Rover Analytics" subtitle={Date.now()}>

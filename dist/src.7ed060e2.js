@@ -94843,10 +94843,17 @@ function (_Component) {
           selectAll = _this$props.selectAll,
           resetAll = _this$props.resetAll,
           selectCam = _this$props.selectCam,
-          location = _this$props.location;
+          location = _this$props.location,
+          history = _this$props.history;
       var pathname = location.pathname; // I Have Set The Menu To Only Appear On Gallery View For Now
 
-      return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(IconWrapper, {
+      return _react.default.createElement(_react.default.Fragment, null, pathname.includes('discover') ? _react.default.createElement(IconWrapper, {
+        onClick: function onClick() {
+          return history.push('/');
+        }
+      }, _react.default.createElement("i", {
+        className: "fas fa-chevron-left"
+      })) : _react.default.createElement(IconWrapper, {
         onClick: this.onActive,
         roll: active
       }, _react.default.createElement("i", {
@@ -97940,7 +97947,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60588" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64984" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
