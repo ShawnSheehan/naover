@@ -5,22 +5,26 @@ export default class Chart extends Component {
   static propTypes = {};
 
   state = {
-    camName: '',
-    dayName: '',
+    cam: '',
+    sol: ''
   };
 
   onDaySelect = e => {
     const { selectDay } = this.props;
-    this.setState({ dayName: e.name });
+
+    this.setState({ sol: e.name });
+
     selectDay(e.name);
   };
 
   onAllSelect = e => {
-    const { dayName, camName } = this.state;
+    const { sol, cam } = this.state;
     const { selectAll } = this.props;
-    this.setState({ camName: e.name });
-    if (dayName) {
-      selectAll(dayName, camName);
+
+    this.setState({ cam: e.name });
+
+    if (sol.length && cam.length) {
+      selectAll(sol, cam);
     }
   };
 

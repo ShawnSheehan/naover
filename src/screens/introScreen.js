@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import Dashboard from '../layouts/dashboard';
 import Spinner from '../components/Spinner';
 import Gallery from '../layouts/gallery';
 
-class IntroScreen extends Component {
-  state = { filter: 'camera' };
+const IntroScreen = props => {
+  const { entities, loading } = props;
+  const filter = 'camera';
 
-  render() {
-    const { entities } = this.props;
-    const { filter } = this.state;
-
-    if (!entities) {
-      return <Spinner propsLoading />;
-    }
-    return (
-      <Dashboard filter={filter}>
-        <Gallery data={entities} />
-      </Dashboard>
-    );
+  if (!entities) {
+    return <Spinner />;
   }
-}
+  return (
+    <Dashboard filter={filter}>
+      <Gallery data={entities} loading={loading} />
+    </Dashboard>
+  );
+};
 
 const mapStateToProps = state => ({
-  entities: state.naover.entities || []
+  entities: state.naover.entities || [],
+  loading: state.naover.loading
 });
 
 export default connect(

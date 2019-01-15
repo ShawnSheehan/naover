@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { node } from 'prop-types';
 import styled from 'styled-components';
 
 import Tile from '../../components/Tile';
@@ -33,12 +31,4 @@ const Gallery = props => {
   );
 };
 
-Gallery.proptTypes = {
-  children: node.isRequired
-};
-
-const mapStateToProps = state => ({
-  loading: state.naover.loading
-});
-
-export default connect(mapStateToProps)(Gallery);
+export default Gallery;

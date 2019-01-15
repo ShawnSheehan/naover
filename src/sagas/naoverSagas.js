@@ -1,7 +1,5 @@
 import { call, put, select, all, fork } from 'redux-saga/effects';
 import flatMap from 'lodash/flatMap';
-import countBy from 'lodash/countBy';
-import map from 'lodash/map';
 
 import * as ActionTypes from '../utils/ActionTypes';
 import * as selectors from '../utils/selectors';
@@ -10,21 +8,18 @@ import services from '../utils/services';
 /* Initial Camera Selector */
 export function* initCamSaga() {
   const cameras = yield select(selectors.cameras);
-  const camObj = countBy(cameras, 'name');
-  const cams = map(camObj, (value, name) => ({ name, value }));
-  yield put({ type: ActionTypes.FILTER_CAMERA_SUCCESS, cameras: cams });
+  yield put({ type: ActionTypes.FILTER_CAMERA_SUCCESS, cameras });
 }
 
 /* Initial Day Selector */
 export function* initDaySaga() {
-  const days = yield select(selectors.days);
-  const solObj = countBy(days);
-  const sols = map(solObj, (value, name) => ({ name, value }));
+  const sols = yield select(selectors.sols);
   yield put({ type: ActionTypes.FILTER_DAY_SUCCESS, sols });
 }
 
 export function* selectDaySaga(action) {
   const response = yield call(services.getEntititesBySol, action.sol);
+  console.log(response, action.sol);
   try {
     yield put({
       type: ActionTypes.SELECT_DAY_SUCCESS,
@@ -62,8 +57,11 @@ export function* initSaga() {
   ]);
   try {
     /* Using Lodash To Flatten Results Into Useable Week */
-    const flatten = flatMap(response, o => o).map(o => o.data);
-    const entities = flatMap(flatten, o => o.photos);
+    const entities = flatMap(
+      flatMap(response, r => r).map(m => m.data),
+      e => e.photos
+    );
+
     yield put({ type: ActionTypes.ENTITIES_FETCH_SUCCESS, entities });
   } catch (error) {
     yield put({ type: ActionTypes.ENTITIES_FETCH_FAILURE, error });
