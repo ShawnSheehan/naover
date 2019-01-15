@@ -17,3 +17,7 @@ export const sols = state =>
     name,
     value
   }));
+
+/* Image Selector */
+export const getImage = id => state =>
+  state.naover.entities.find(o => o.id === Number(id));

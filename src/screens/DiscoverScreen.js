@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Dashboard from '../layouts/dashboard';
+import { getImage } from '../utils/selectors';
 
 const DiscoverWrapper = styled.div`
   align-items: center;
@@ -92,9 +93,10 @@ const DiscoverScreen = props => {
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
+  const image = getImage(id)(state);
   return {
     id,
-    image: state.naover.entities.find(o => o.id === Number(id))
+    image
   };
 };
 
