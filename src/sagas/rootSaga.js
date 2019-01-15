@@ -1,4 +1,5 @@
-import { all, takeLatest } from 'redux-saga/effects';
+import { all, takeLatest, take } from 'redux-saga/effects';
+import { REHYDRATE } from 'redux-persist/lib/constants';
 
 import * as ActionTypes from '../utils/ActionTypes';
 import {
@@ -10,6 +11,7 @@ import {
 } from './naoverSagas';
 
 export default function* rootSaga() {
+  yield take(REHYDRATE);
   yield all([
     takeLatest(ActionTypes.ENTITIES_FETCH_REQUEST, initSaga),
     takeLatest(ActionTypes.SELECT_INITIAL_REQUEST, selectInitSaga),

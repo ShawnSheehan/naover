@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store';
 import Root from './components/root';
-import rootSaga from './sagas/rootSaga';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
-  store.runSaga(rootSaga);
+  const { store, persistor } = configureStore();
 
-  ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+  ReactDOM.render(
+    <Root store={store} persistor={persistor} />,
+    document.getElementById('root')
+  );
 });
 
 if (module.hot) {

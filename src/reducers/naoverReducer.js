@@ -6,7 +6,7 @@ const initalState = {
   selected: []
 };
 
-export default function(state = initalState, action) {
+export default (state = initalState, action) => {
   switch (action.type) {
     case ActionTypes.ENTITIES_FETCH_REQUEST:
       return {
@@ -151,4 +151,4 @@ export default function(state = initalState, action) {
     default:
       return state;
   }
-}
+};

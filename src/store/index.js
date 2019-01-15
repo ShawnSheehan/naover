@@ -1,20 +1,32 @@
-import { createStore, applyMiddleware } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import persistStorage from 'redux-persist/es/storage';
 import createSagaMiddleware from 'redux-saga';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 
 import rootReducer from '../reducers/rootReducer';
+import rootSaga from '../sagas/rootSaga';
 
-const configureStore = (preloadedState = {}) => {
-  const sagaMiddleware = createSagaMiddleware();
-  return {
-    ...createStore(
-      rootReducer,
-      preloadedState,
-      composeWithDevTools(applyMiddleware(sagaMiddleware, logger)),
-    ),
-    runSaga: sagaMiddleware.run,
-  };
+const sagaMiddleware = createSagaMiddleware();
+
+const persistConfig = {
+  key: 'root',
+  storage: persistStorage
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const configureStore = () => {
+  const store = createStore(
+    persistedReducer,
+    applyMiddleware(sagaMiddleware, logger)
+  );
+
+  sagaMiddleware.run(rootSaga);
+
+  const persistor = persistStore(store);
+
+  return { store, persistor };
 };
 
 export default configureStore;
