@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Dashboard from '../layouts/dashboard';
-import Spinner from '../components/Spinner';
 import Gallery from '../layouts/gallery';
 
 const IntroScreen = props => {
@@ -10,7 +9,7 @@ const IntroScreen = props => {
   const filter = 'camera';
 
   if (!selected) {
-    return <Spinner />;
+    return <div>Loading...</div>;
   }
   return (
     <Dashboard filter={filter}>

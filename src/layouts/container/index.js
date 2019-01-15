@@ -2,8 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { node, string } from 'prop-types';
 
-import MarsPNG from '../../assets/mars_planet.png';
-
 const fadein = keyframes`
   from {
     opacity: 0;;
@@ -14,9 +12,6 @@ const fadein = keyframes`
 `;
 
 const ContainerWrapper = styled.div`
-  background: url(${MarsPNG}) no-repeat;
-  background-size: contain;
-  background-position: bottom -400px center;
   background-color: ${props => props.color && props.color};
   position: relative;
   width: calc(100vw - 30px);
@@ -39,11 +34,11 @@ const Container = props => {
 
 Container.propTypes = {
   children: node.isRequired,
-  color: string,
+  color: string
 };
 
 Container.defaultProps = {
-  color: 'rgba(30,39,46,0.8)',
+  color: 'rgba(30,39,46,0.8)'
 };
 
 export default Container;
