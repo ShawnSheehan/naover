@@ -1,5 +1,4 @@
 import React from 'react';
-import { string } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
@@ -45,18 +44,12 @@ const TileWrapper = styled.div`
 `;
 
 const Tile = props => {
-  const { route, history } = props;
-  return <TileWrapper {...props} onClick={() => history.push(route)} />;
-};
-
-Tile.propTypes = {
-  image: string,
-  route: string
-};
-
-Tile.defaultProps = {
-  image: null,
-  route: '/'
+  const { id, history } = props;
+  const handleRoute = () => {
+    localStorage.setItem('id', id);
+    history.push(`/discover/${id}`);
+  };
+  return <TileWrapper {...props} onClick={handleRoute} />;
 };
 
 const mapStateToProps = state => ({

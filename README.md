@@ -7,7 +7,7 @@
 1 - install dependencies
 `yarn || npm install`
 
-2 - run development server `localhost:8080`
+2 - run development server `localhost:1234`
 `yarn run dev || npm run dev`
 
 3 - lint via eslint

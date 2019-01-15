@@ -1,0 +1,2289 @@
+{
+  "id": "../src/reducers/naoverReducer.js",
+  "dependencies": [
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/.babelrc",
+      "includedInParent": true,
+      "mtime": 1547532003651
+    },
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/package.json",
+      "includedInParent": true,
+      "mtime": 1547584654152
+    },
+    {
+      "name": "@babel/runtime/helpers/objectSpread",
+      "parent": "/Users/shawnsheehan/workspace/naover/src/reducers/naoverReducer.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/@babel/runtime/helpers/objectSpread.js"
+    },
+    {
+      "name": "react-hot-loader",
+      "parent": "/Users/shawnsheehan/workspace/naover/src/reducers/naoverReducer.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/react-hot-loader/index.js"
+    },
+    {
+      "name": "../utils/ActionTypes",
+      "loc": { "line": 1, "column": 29 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/reducers/naoverReducer.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/src/utils/ActionTypes.js"
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _objectSpread2 = _interopRequireDefault(require(\"@babel/runtime/helpers/objectSpread\"));\n\nvar ActionTypes = _interopRequireWildcard(require(\"../utils/ActionTypes\"));\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar initalState = {\n  loading: false,\n  error: null,\n  selected: []\n};\n\nvar _default = function _default() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case ActionTypes.ENTITIES_FETCH_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.ENTITIES_FETCH_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        entities: action.entities\n      });\n\n    case ActionTypes.ENTITIES_FETCH_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        error: action.error,\n        loading: false\n      });\n\n    case ActionTypes.SELECT_INITIAL_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.SELECT_INITIAL_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        selected: action.selected\n      });\n\n    case ActionTypes.SELECT_INITIAL_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    case ActionTypes.SELECT_DAY_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.SELECT_DAY_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        selected: action.selected\n      });\n\n    case ActionTypes.SELECT_DAY_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    case ActionTypes.SELECT_CAMERA_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.SELECT_CAMERA_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        selected: action.selected\n      });\n\n    case ActionTypes.SELECT_CAMERA_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    case ActionTypes.SELECT_ALL_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.SELECT_ALL_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        entities: action.entities\n      });\n\n    case ActionTypes.SELECT_ALL_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    case ActionTypes.FILTER_CAMERA_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.FILTER_CAMERA_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        cameras: action.cameras\n      });\n\n    case ActionTypes.FILTER_CAMERA_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    case ActionTypes.FILTER_DAY_REQUEST:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: true\n      });\n\n    case ActionTypes.FILTER_DAY_SUCCESS:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        sols: action.sols\n      });\n\n    case ActionTypes.FILTER_DAY_FAILURE:\n      return (0, _objectSpread2.default)({}, state, {\n        loading: false,\n        error: action.error\n      });\n\n    default:\n      return state;\n  }\n};\n\nvar _default2 = _default;\nexports.default = _default2;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(initalState, \"initalState\", \"/Users/shawnsheehan/workspace/naover/src/reducers/naoverReducer.js\");\n  reactHotLoader.register(_default, \"default\", \"/Users/shawnsheehan/workspace/naover/src/reducers/naoverReducer.js\");\n  leaveModule(module);\n})();\n\n;",
+    "map": {
+      "mappings": [
+        {
+          "generated": { "line": 10, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 22, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "name": "initalState",
+          "generated": { "line": 22, "column": 4 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 6 }
+        },
+        {
+          "generated": { "line": 22, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 17 }
+        },
+        {
+          "generated": { "line": 22, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 20 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 23, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 4, "column": 2 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 23, "column": 2 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 4, "column": 2 }
+        },
+        {
+          "generated": { "line": 23, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 4, "column": 9 }
+        },
+        {
+          "generated": { "line": 23, "column": 11 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 4, "column": 11 }
+        },
+        {
+          "generated": { "line": 23, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 20 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 24, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 5, "column": 2 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 24, "column": 2 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 5, "column": 2 }
+        },
+        {
+          "generated": { "line": 24, "column": 7 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 5, "column": 7 }
+        },
+        {
+          "generated": { "line": 24, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 5, "column": 9 }
+        },
+        {
+          "generated": { "line": 24, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 20 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 25, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 6, "column": 2 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 25, "column": 2 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 6, "column": 2 }
+        },
+        {
+          "generated": { "line": 25, "column": 10 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 6, "column": 10 }
+        },
+        {
+          "generated": { "line": 25, "column": 12 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 6, "column": 12 }
+        },
+        {
+          "generated": { "line": 26, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 20 }
+        },
+        {
+          "generated": { "line": 26, "column": 1 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "generated": { "line": 28, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 15 }
+        },
+        {
+          "generated": { "line": 28, "column": 35 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "generated": { "line": 29, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 29, "column": 6 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 24 }
+        },
+        {
+          "generated": { "line": 29, "column": 11 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "name": "initalState",
+          "generated": { "line": 29, "column": 82 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 32 }
+        },
+        {
+          "generated": { "line": 29, "column": 93 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "generated": { "line": 30, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 30, "column": 6 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 45 }
+        },
+        {
+          "generated": { "line": 30, "column": 12 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 9, "column": 53 }
+        },
+        {
+          "generated": { "line": 32, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 2 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 32, "column": 10 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 10 }
+        },
+        {
+          "generated": { "line": 32, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 16 }
+        },
+        {
+          "name": "type",
+          "generated": { "line": 32, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 17 }
+        },
+        {
+          "generated": { "line": 32, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 2 }
+        },
+        {
+          "generated": { "line": 33, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 11, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 33, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 11, "column": 9 }
+        },
+        {
+          "generated": { "line": 33, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 11, "column": 20 }
+        },
+        {
+          "name": "ENTITIES_FETCH_REQUEST",
+          "generated": { "line": 33, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 11, "column": 21 }
+        },
+        {
+          "generated": { "line": 33, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 11, "column": 4 }
+        },
+        {
+          "generated": { "line": 34, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 12, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 34, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 13, "column": 11 }
+        },
+        {
+          "generated": { "line": 34, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 12, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 35, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 14, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 35, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 14, "column": 8 }
+        },
+        {
+          "generated": { "line": 35, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 14, "column": 15 }
+        },
+        {
+          "generated": { "line": 35, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 14, "column": 17 }
+        },
+        {
+          "generated": { "line": 36, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 12, "column": 6 }
+        },
+        {
+          "generated": { "line": 38, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 38, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 17, "column": 9 }
+        },
+        {
+          "generated": { "line": 38, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 17, "column": 20 }
+        },
+        {
+          "name": "ENTITIES_FETCH_SUCCESS",
+          "generated": { "line": 38, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 17, "column": 21 }
+        },
+        {
+          "generated": { "line": 38, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "generated": { "line": 39, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 18, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 39, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 19, "column": 11 }
+        },
+        {
+          "generated": { "line": 39, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 18, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 40, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 20, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 40, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 20, "column": 8 }
+        },
+        {
+          "generated": { "line": 40, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 20, "column": 15 }
+        },
+        {
+          "generated": { "line": 40, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 20, "column": 17 }
+        },
+        {
+          "generated": { "line": 40, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 18, "column": 6 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 41, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 8 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 41, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 8 }
+        },
+        {
+          "generated": { "line": 41, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 16 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 41, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 18 }
+        },
+        {
+          "generated": { "line": 41, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 24 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 41, "column": 25 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 21, "column": 25 }
+        },
+        {
+          "generated": { "line": 42, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 18, "column": 6 }
+        },
+        {
+          "generated": { "line": 44, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 24, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 44, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 24, "column": 9 }
+        },
+        {
+          "generated": { "line": 44, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 24, "column": 20 }
+        },
+        {
+          "name": "ENTITIES_FETCH_FAILURE",
+          "generated": { "line": 44, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 24, "column": 21 }
+        },
+        {
+          "generated": { "line": 44, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 24, "column": 4 }
+        },
+        {
+          "generated": { "line": 45, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 25, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 45, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 26, "column": 11 }
+        },
+        {
+          "generated": { "line": 45, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 25, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 46, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 46, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 8 }
+        },
+        {
+          "generated": { "line": 46, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 46, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 15 }
+        },
+        {
+          "generated": { "line": 46, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 46, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 27, "column": 22 }
+        },
+        {
+          "generated": { "line": 46, "column": 27 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 25, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 47, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 28, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 47, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 28, "column": 8 }
+        },
+        {
+          "generated": { "line": 47, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 28, "column": 15 }
+        },
+        {
+          "generated": { "line": 47, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 28, "column": 17 }
+        },
+        {
+          "generated": { "line": 48, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 25, "column": 6 }
+        },
+        {
+          "generated": { "line": 50, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 31, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 50, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 31, "column": 9 }
+        },
+        {
+          "generated": { "line": 50, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 31, "column": 20 }
+        },
+        {
+          "name": "SELECT_INITIAL_REQUEST",
+          "generated": { "line": 50, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 31, "column": 21 }
+        },
+        {
+          "generated": { "line": 50, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 31, "column": 4 }
+        },
+        {
+          "generated": { "line": 51, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 32, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 51, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 33, "column": 11 }
+        },
+        {
+          "generated": { "line": 51, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 32, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 52, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 34, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 52, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 34, "column": 8 }
+        },
+        {
+          "generated": { "line": 52, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 34, "column": 15 }
+        },
+        {
+          "generated": { "line": 52, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 34, "column": 17 }
+        },
+        {
+          "generated": { "line": 53, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 32, "column": 6 }
+        },
+        {
+          "generated": { "line": 55, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 37, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 55, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 37, "column": 9 }
+        },
+        {
+          "generated": { "line": 55, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 37, "column": 20 }
+        },
+        {
+          "name": "SELECT_INITIAL_SUCCESS",
+          "generated": { "line": 55, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 37, "column": 21 }
+        },
+        {
+          "generated": { "line": 55, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 37, "column": 4 }
+        },
+        {
+          "generated": { "line": 56, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 38, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 56, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 39, "column": 11 }
+        },
+        {
+          "generated": { "line": 56, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 38, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 57, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 40, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 57, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 40, "column": 8 }
+        },
+        {
+          "generated": { "line": 57, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 40, "column": 15 }
+        },
+        {
+          "generated": { "line": 57, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 40, "column": 17 }
+        },
+        {
+          "generated": { "line": 57, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 38, "column": 6 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 58, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 8 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 58, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 8 }
+        },
+        {
+          "generated": { "line": 58, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 16 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 58, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 18 }
+        },
+        {
+          "generated": { "line": 58, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 24 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 58, "column": 25 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 41, "column": 25 }
+        },
+        {
+          "generated": { "line": 59, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 38, "column": 6 }
+        },
+        {
+          "generated": { "line": 61, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 44, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 61, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 44, "column": 9 }
+        },
+        {
+          "generated": { "line": 61, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 44, "column": 20 }
+        },
+        {
+          "name": "SELECT_INITIAL_FAILURE",
+          "generated": { "line": 61, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 44, "column": 21 }
+        },
+        {
+          "generated": { "line": 61, "column": 43 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 44, "column": 4 }
+        },
+        {
+          "generated": { "line": 62, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 45, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 62, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 46, "column": 11 }
+        },
+        {
+          "generated": { "line": 62, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 45, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 63, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 47, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 63, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 47, "column": 8 }
+        },
+        {
+          "generated": { "line": 63, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 47, "column": 15 }
+        },
+        {
+          "generated": { "line": 63, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 47, "column": 17 }
+        },
+        {
+          "generated": { "line": 63, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 45, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 64, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 64, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 8 }
+        },
+        {
+          "generated": { "line": 64, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 64, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 15 }
+        },
+        {
+          "generated": { "line": 64, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 64, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 48, "column": 22 }
+        },
+        {
+          "generated": { "line": 65, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 45, "column": 6 }
+        },
+        {
+          "generated": { "line": 67, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 51, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 67, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 51, "column": 9 }
+        },
+        {
+          "generated": { "line": 67, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 51, "column": 20 }
+        },
+        {
+          "name": "SELECT_DAY_REQUEST",
+          "generated": { "line": 67, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 51, "column": 21 }
+        },
+        {
+          "generated": { "line": 67, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 51, "column": 4 }
+        },
+        {
+          "generated": { "line": 68, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 52, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 68, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 53, "column": 11 }
+        },
+        {
+          "generated": { "line": 68, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 52, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 69, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 54, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 69, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 54, "column": 8 }
+        },
+        {
+          "generated": { "line": 69, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 54, "column": 15 }
+        },
+        {
+          "generated": { "line": 69, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 54, "column": 17 }
+        },
+        {
+          "generated": { "line": 70, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 52, "column": 6 }
+        },
+        {
+          "generated": { "line": 72, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 57, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 72, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 57, "column": 9 }
+        },
+        {
+          "generated": { "line": 72, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 57, "column": 20 }
+        },
+        {
+          "name": "SELECT_DAY_SUCCESS",
+          "generated": { "line": 72, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 57, "column": 21 }
+        },
+        {
+          "generated": { "line": 72, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 57, "column": 4 }
+        },
+        {
+          "generated": { "line": 73, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 58, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 73, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 59, "column": 11 }
+        },
+        {
+          "generated": { "line": 73, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 58, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 74, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 60, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 74, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 60, "column": 8 }
+        },
+        {
+          "generated": { "line": 74, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 60, "column": 15 }
+        },
+        {
+          "generated": { "line": 74, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 60, "column": 17 }
+        },
+        {
+          "generated": { "line": 74, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 58, "column": 6 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 75, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 8 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 75, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 8 }
+        },
+        {
+          "generated": { "line": 75, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 16 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 75, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 18 }
+        },
+        {
+          "generated": { "line": 75, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 24 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 75, "column": 25 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 61, "column": 25 }
+        },
+        {
+          "generated": { "line": 76, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 58, "column": 6 }
+        },
+        {
+          "generated": { "line": 78, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 64, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 78, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 64, "column": 9 }
+        },
+        {
+          "generated": { "line": 78, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 64, "column": 20 }
+        },
+        {
+          "name": "SELECT_DAY_FAILURE",
+          "generated": { "line": 78, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 64, "column": 21 }
+        },
+        {
+          "generated": { "line": 78, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 64, "column": 4 }
+        },
+        {
+          "generated": { "line": 79, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 65, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 79, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 66, "column": 11 }
+        },
+        {
+          "generated": { "line": 79, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 65, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 80, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 67, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 80, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 67, "column": 8 }
+        },
+        {
+          "generated": { "line": 80, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 67, "column": 15 }
+        },
+        {
+          "generated": { "line": 80, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 67, "column": 17 }
+        },
+        {
+          "generated": { "line": 80, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 65, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 81, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 81, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 8 }
+        },
+        {
+          "generated": { "line": 81, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 81, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 15 }
+        },
+        {
+          "generated": { "line": 81, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 81, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 68, "column": 22 }
+        },
+        {
+          "generated": { "line": 82, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 65, "column": 6 }
+        },
+        {
+          "generated": { "line": 84, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 71, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 84, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 71, "column": 9 }
+        },
+        {
+          "generated": { "line": 84, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 71, "column": 20 }
+        },
+        {
+          "name": "SELECT_CAMERA_REQUEST",
+          "generated": { "line": 84, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 71, "column": 21 }
+        },
+        {
+          "generated": { "line": 84, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 71, "column": 4 }
+        },
+        {
+          "generated": { "line": 85, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 72, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 85, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 73, "column": 11 }
+        },
+        {
+          "generated": { "line": 85, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 72, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 86, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 74, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 86, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 74, "column": 8 }
+        },
+        {
+          "generated": { "line": 86, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 74, "column": 15 }
+        },
+        {
+          "generated": { "line": 86, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 74, "column": 17 }
+        },
+        {
+          "generated": { "line": 87, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 72, "column": 6 }
+        },
+        {
+          "generated": { "line": 89, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 77, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 89, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 77, "column": 9 }
+        },
+        {
+          "generated": { "line": 89, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 77, "column": 20 }
+        },
+        {
+          "name": "SELECT_CAMERA_SUCCESS",
+          "generated": { "line": 89, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 77, "column": 21 }
+        },
+        {
+          "generated": { "line": 89, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 77, "column": 4 }
+        },
+        {
+          "generated": { "line": 90, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 78, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 90, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 79, "column": 11 }
+        },
+        {
+          "generated": { "line": 90, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 78, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 91, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 80, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 91, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 80, "column": 8 }
+        },
+        {
+          "generated": { "line": 91, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 80, "column": 15 }
+        },
+        {
+          "generated": { "line": 91, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 80, "column": 17 }
+        },
+        {
+          "generated": { "line": 91, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 78, "column": 6 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 92, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 8 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 92, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 8 }
+        },
+        {
+          "generated": { "line": 92, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 16 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 92, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 18 }
+        },
+        {
+          "generated": { "line": 92, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 24 }
+        },
+        {
+          "name": "selected",
+          "generated": { "line": 92, "column": 25 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 81, "column": 25 }
+        },
+        {
+          "generated": { "line": 93, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 78, "column": 6 }
+        },
+        {
+          "generated": { "line": 95, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 84, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 95, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 84, "column": 9 }
+        },
+        {
+          "generated": { "line": 95, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 84, "column": 20 }
+        },
+        {
+          "name": "SELECT_CAMERA_FAILURE",
+          "generated": { "line": 95, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 84, "column": 21 }
+        },
+        {
+          "generated": { "line": 95, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 84, "column": 4 }
+        },
+        {
+          "generated": { "line": 96, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 85, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 96, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 86, "column": 11 }
+        },
+        {
+          "generated": { "line": 96, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 85, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 97, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 87, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 97, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 87, "column": 8 }
+        },
+        {
+          "generated": { "line": 97, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 87, "column": 15 }
+        },
+        {
+          "generated": { "line": 97, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 87, "column": 17 }
+        },
+        {
+          "generated": { "line": 97, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 85, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 98, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 98, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 8 }
+        },
+        {
+          "generated": { "line": 98, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 98, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 15 }
+        },
+        {
+          "generated": { "line": 98, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 98, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 88, "column": 22 }
+        },
+        {
+          "generated": { "line": 99, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 85, "column": 6 }
+        },
+        {
+          "generated": { "line": 101, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 91, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 101, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 91, "column": 9 }
+        },
+        {
+          "generated": { "line": 101, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 91, "column": 20 }
+        },
+        {
+          "name": "SELECT_ALL_REQUEST",
+          "generated": { "line": 101, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 91, "column": 21 }
+        },
+        {
+          "generated": { "line": 101, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 91, "column": 4 }
+        },
+        {
+          "generated": { "line": 102, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 92, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 102, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 93, "column": 11 }
+        },
+        {
+          "generated": { "line": 102, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 92, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 103, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 94, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 103, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 94, "column": 8 }
+        },
+        {
+          "generated": { "line": 103, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 94, "column": 15 }
+        },
+        {
+          "generated": { "line": 103, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 94, "column": 17 }
+        },
+        {
+          "generated": { "line": 104, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 92, "column": 6 }
+        },
+        {
+          "generated": { "line": 106, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 97, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 106, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 97, "column": 9 }
+        },
+        {
+          "generated": { "line": 106, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 97, "column": 20 }
+        },
+        {
+          "name": "SELECT_ALL_SUCCESS",
+          "generated": { "line": 106, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 97, "column": 21 }
+        },
+        {
+          "generated": { "line": 106, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 97, "column": 4 }
+        },
+        {
+          "generated": { "line": 107, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 98, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 107, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 99, "column": 11 }
+        },
+        {
+          "generated": { "line": 107, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 98, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 108, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 100, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 108, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 100, "column": 8 }
+        },
+        {
+          "generated": { "line": 108, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 100, "column": 15 }
+        },
+        {
+          "generated": { "line": 108, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 100, "column": 17 }
+        },
+        {
+          "generated": { "line": 108, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 98, "column": 6 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 109, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 8 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 109, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 8 }
+        },
+        {
+          "generated": { "line": 109, "column": 16 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 16 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 109, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 18 }
+        },
+        {
+          "generated": { "line": 109, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 24 }
+        },
+        {
+          "name": "entities",
+          "generated": { "line": 109, "column": 25 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 101, "column": 25 }
+        },
+        {
+          "generated": { "line": 110, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 98, "column": 6 }
+        },
+        {
+          "generated": { "line": 112, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 104, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 112, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 104, "column": 9 }
+        },
+        {
+          "generated": { "line": 112, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 104, "column": 20 }
+        },
+        {
+          "name": "SELECT_ALL_FAILURE",
+          "generated": { "line": 112, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 104, "column": 21 }
+        },
+        {
+          "generated": { "line": 112, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 104, "column": 4 }
+        },
+        {
+          "generated": { "line": 113, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 105, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 113, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 106, "column": 11 }
+        },
+        {
+          "generated": { "line": 113, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 105, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 114, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 107, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 114, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 107, "column": 8 }
+        },
+        {
+          "generated": { "line": 114, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 107, "column": 15 }
+        },
+        {
+          "generated": { "line": 114, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 107, "column": 17 }
+        },
+        {
+          "generated": { "line": 114, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 105, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 115, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 115, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 8 }
+        },
+        {
+          "generated": { "line": 115, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 115, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 15 }
+        },
+        {
+          "generated": { "line": 115, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 115, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 108, "column": 22 }
+        },
+        {
+          "generated": { "line": 116, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 105, "column": 6 }
+        },
+        {
+          "generated": { "line": 118, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 111, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 118, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 111, "column": 9 }
+        },
+        {
+          "generated": { "line": 118, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 111, "column": 20 }
+        },
+        {
+          "name": "FILTER_CAMERA_REQUEST",
+          "generated": { "line": 118, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 111, "column": 21 }
+        },
+        {
+          "generated": { "line": 118, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 111, "column": 4 }
+        },
+        {
+          "generated": { "line": 119, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 112, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 119, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 113, "column": 11 }
+        },
+        {
+          "generated": { "line": 119, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 112, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 120, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 114, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 120, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 114, "column": 8 }
+        },
+        {
+          "generated": { "line": 120, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 114, "column": 15 }
+        },
+        {
+          "generated": { "line": 120, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 114, "column": 17 }
+        },
+        {
+          "generated": { "line": 121, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 112, "column": 6 }
+        },
+        {
+          "generated": { "line": 123, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 117, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 123, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 117, "column": 9 }
+        },
+        {
+          "generated": { "line": 123, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 117, "column": 20 }
+        },
+        {
+          "name": "FILTER_CAMERA_SUCCESS",
+          "generated": { "line": 123, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 117, "column": 21 }
+        },
+        {
+          "generated": { "line": 123, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 117, "column": 4 }
+        },
+        {
+          "generated": { "line": 124, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 118, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 124, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 119, "column": 11 }
+        },
+        {
+          "generated": { "line": 124, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 118, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 125, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 120, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 125, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 120, "column": 8 }
+        },
+        {
+          "generated": { "line": 125, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 120, "column": 15 }
+        },
+        {
+          "generated": { "line": 125, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 120, "column": 17 }
+        },
+        {
+          "generated": { "line": 125, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 118, "column": 6 }
+        },
+        {
+          "name": "cameras",
+          "generated": { "line": 126, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 8 }
+        },
+        {
+          "name": "cameras",
+          "generated": { "line": 126, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 8 }
+        },
+        {
+          "generated": { "line": 126, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 15 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 126, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 17 }
+        },
+        {
+          "generated": { "line": 126, "column": 23 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 23 }
+        },
+        {
+          "name": "cameras",
+          "generated": { "line": 126, "column": 24 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 121, "column": 24 }
+        },
+        {
+          "generated": { "line": 127, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 118, "column": 6 }
+        },
+        {
+          "generated": { "line": 129, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 124, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 129, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 124, "column": 9 }
+        },
+        {
+          "generated": { "line": 129, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 124, "column": 20 }
+        },
+        {
+          "name": "FILTER_CAMERA_FAILURE",
+          "generated": { "line": 129, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 124, "column": 21 }
+        },
+        {
+          "generated": { "line": 129, "column": 42 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 124, "column": 4 }
+        },
+        {
+          "generated": { "line": 130, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 125, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 130, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 126, "column": 11 }
+        },
+        {
+          "generated": { "line": 130, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 125, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 131, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 127, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 131, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 127, "column": 8 }
+        },
+        {
+          "generated": { "line": 131, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 127, "column": 15 }
+        },
+        {
+          "generated": { "line": 131, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 127, "column": 17 }
+        },
+        {
+          "generated": { "line": 131, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 125, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 132, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 132, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 8 }
+        },
+        {
+          "generated": { "line": 132, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 132, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 15 }
+        },
+        {
+          "generated": { "line": 132, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 132, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 128, "column": 22 }
+        },
+        {
+          "generated": { "line": 133, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 125, "column": 6 }
+        },
+        {
+          "generated": { "line": 135, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 131, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 135, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 131, "column": 9 }
+        },
+        {
+          "generated": { "line": 135, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 131, "column": 20 }
+        },
+        {
+          "name": "FILTER_DAY_REQUEST",
+          "generated": { "line": 135, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 131, "column": 21 }
+        },
+        {
+          "generated": { "line": 135, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 131, "column": 4 }
+        },
+        {
+          "generated": { "line": 136, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 132, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 136, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 133, "column": 11 }
+        },
+        {
+          "generated": { "line": 136, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 132, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 137, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 134, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 137, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 134, "column": 8 }
+        },
+        {
+          "generated": { "line": 137, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 134, "column": 15 }
+        },
+        {
+          "generated": { "line": 137, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 134, "column": 17 }
+        },
+        {
+          "generated": { "line": 138, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 132, "column": 6 }
+        },
+        {
+          "generated": { "line": 140, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 137, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 140, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 137, "column": 9 }
+        },
+        {
+          "generated": { "line": 140, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 137, "column": 20 }
+        },
+        {
+          "name": "FILTER_DAY_SUCCESS",
+          "generated": { "line": 140, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 137, "column": 21 }
+        },
+        {
+          "generated": { "line": 140, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 137, "column": 4 }
+        },
+        {
+          "generated": { "line": 141, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 138, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 141, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 139, "column": 11 }
+        },
+        {
+          "generated": { "line": 141, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 138, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 142, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 140, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 142, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 140, "column": 8 }
+        },
+        {
+          "generated": { "line": 142, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 140, "column": 15 }
+        },
+        {
+          "generated": { "line": 142, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 140, "column": 17 }
+        },
+        {
+          "generated": { "line": 142, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 138, "column": 6 }
+        },
+        {
+          "name": "sols",
+          "generated": { "line": 143, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 8 }
+        },
+        {
+          "name": "sols",
+          "generated": { "line": 143, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 8 }
+        },
+        {
+          "generated": { "line": 143, "column": 12 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 12 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 143, "column": 14 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 14 }
+        },
+        {
+          "generated": { "line": 143, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 20 }
+        },
+        {
+          "name": "sols",
+          "generated": { "line": 143, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 141, "column": 21 }
+        },
+        {
+          "generated": { "line": 144, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 138, "column": 6 }
+        },
+        {
+          "generated": { "line": 146, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 144, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 146, "column": 9 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 144, "column": 9 }
+        },
+        {
+          "generated": { "line": 146, "column": 20 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 144, "column": 20 }
+        },
+        {
+          "name": "FILTER_DAY_FAILURE",
+          "generated": { "line": 146, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 144, "column": 21 }
+        },
+        {
+          "generated": { "line": 146, "column": 39 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 144, "column": 4 }
+        },
+        {
+          "generated": { "line": 147, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 145, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 147, "column": 45 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 146, "column": 11 }
+        },
+        {
+          "generated": { "line": 147, "column": 50 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 145, "column": 6 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 148, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 147, "column": 8 }
+        },
+        {
+          "name": "loading",
+          "generated": { "line": 148, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 147, "column": 8 }
+        },
+        {
+          "generated": { "line": 148, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 147, "column": 15 }
+        },
+        {
+          "generated": { "line": 148, "column": 17 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 147, "column": 17 }
+        },
+        {
+          "generated": { "line": 148, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 145, "column": 6 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 149, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 8 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 149, "column": 8 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 8 }
+        },
+        {
+          "generated": { "line": 149, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 13 }
+        },
+        {
+          "name": "action",
+          "generated": { "line": 149, "column": 15 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 15 }
+        },
+        {
+          "generated": { "line": 149, "column": 21 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 21 }
+        },
+        {
+          "name": "error",
+          "generated": { "line": 149, "column": 22 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 148, "column": 22 }
+        },
+        {
+          "generated": { "line": 150, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 145, "column": 6 }
+        },
+        {
+          "generated": { "line": 152, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 151, "column": 4 }
+        },
+        {
+          "generated": { "line": 153, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 152, "column": 6 }
+        },
+        {
+          "name": "state",
+          "generated": { "line": 153, "column": 13 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 152, "column": 13 }
+        },
+        {
+          "generated": { "line": 153, "column": 18 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 152, "column": 6 }
+        },
+        {
+          "generated": { "line": 154, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 10, "column": 2 }
+        },
+        {
+          "generated": { "line": 155, "column": 0 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 154, "column": 1 }
+        },
+        {
+          "name": "initalState",
+          "generated": { "line": 170, "column": 26 },
+          "source": "../src/reducers/naoverReducer.js",
+          "original": { "line": 3, "column": 6 }
+        }
+      ],
+      "sources": {
+        "../src/reducers/naoverReducer.js": "import * as ActionTypes from '../utils/ActionTypes';\n\nconst initalState = {\n  loading: false,\n  error: null,\n  selected: []\n};\n\nexport default function(state = initalState, action) {\n  switch (action.type) {\n    case ActionTypes.ENTITIES_FETCH_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.ENTITIES_FETCH_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        entities: action.entities\n      };\n\n    case ActionTypes.ENTITIES_FETCH_FAILURE:\n      return {\n        ...state,\n        error: action.error,\n        loading: false\n      };\n\n    case ActionTypes.SELECT_INITIAL_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.SELECT_INITIAL_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        selected: action.selected\n      };\n\n    case ActionTypes.SELECT_INITIAL_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    case ActionTypes.SELECT_DAY_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.SELECT_DAY_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        selected: action.selected\n      };\n\n    case ActionTypes.SELECT_DAY_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    case ActionTypes.SELECT_CAMERA_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.SELECT_CAMERA_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        selected: action.selected\n      };\n\n    case ActionTypes.SELECT_CAMERA_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    case ActionTypes.SELECT_ALL_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.SELECT_ALL_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        entities: action.entities\n      };\n\n    case ActionTypes.SELECT_ALL_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    case ActionTypes.FILTER_CAMERA_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.FILTER_CAMERA_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        cameras: action.cameras\n      };\n\n    case ActionTypes.FILTER_CAMERA_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    case ActionTypes.FILTER_DAY_REQUEST:\n      return {\n        ...state,\n        loading: true\n      };\n\n    case ActionTypes.FILTER_DAY_SUCCESS:\n      return {\n        ...state,\n        loading: false,\n        sols: action.sols\n      };\n\n    case ActionTypes.FILTER_DAY_FAILURE:\n      return {\n        ...state,\n        loading: false,\n        error: action.error\n      };\n\n    default:\n      return state;\n  }\n}\n"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "779f1df5557f46c9d45e00f65c7bc5fa",
+  "cacheData": { "env": {} }
+}

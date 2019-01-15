@@ -1,0 +1,399 @@
+{
+  "id": "../src/sagas/rootSaga.js",
+  "dependencies": [
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/.babelrc",
+      "includedInParent": true,
+      "mtime": 1547532003651
+    },
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/package.json",
+      "includedInParent": true,
+      "mtime": 1547584654152
+    },
+    {
+      "name": "@babel/runtime/regenerator",
+      "parent": "/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/@babel/runtime/regenerator/index.js"
+    },
+    {
+      "name": "react-hot-loader",
+      "parent": "/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/react-hot-loader/index.js"
+    },
+    {
+      "name": "redux-saga/effects",
+      "loc": { "line": 1, "column": 32 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/redux-saga/es/effects.js"
+    },
+    {
+      "name": "../utils/ActionTypes",
+      "loc": { "line": 3, "column": 29 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/src/utils/ActionTypes.js"
+    },
+    {
+      "name": "./naoverSagas",
+      "loc": { "line": 10, "column": 7 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/src/sagas/naoverSagas.js"
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = rootSaga;\n\nvar _regenerator = _interopRequireDefault(require(\"@babel/runtime/regenerator\"));\n\nvar _effects = require(\"redux-saga/effects\");\n\nvar ActionTypes = _interopRequireWildcard(require(\"../utils/ActionTypes\"));\n\nvar _naoverSagas = require(\"./naoverSagas\");\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar _marked =\n/*#__PURE__*/\n_regenerator.default.mark(rootSaga);\n\nfunction rootSaga() {\n  return _regenerator.default.wrap(function rootSaga$(_context) {\n    while (1) {\n      switch (_context.prev = _context.next) {\n        case 0:\n          _context.next = 2;\n          return (0, _effects.all)([(0, _effects.takeLatest)(ActionTypes.ENTITIES_FETCH_REQUEST, _naoverSagas.initSaga), (0, _effects.takeLatest)(ActionTypes.SELECT_INITIAL_REQUEST, _naoverSagas.selectInitSaga), (0, _effects.takeLatest)(ActionTypes.SELECT_DAY_REQUEST, _naoverSagas.selectDaySaga), (0, _effects.takeLatest)(ActionTypes.SELECT_CAMERA_REQUEST, _naoverSagas.selectCamSaga), (0, _effects.takeLatest)(ActionTypes.SELECT_ALL_REQUEST, _naoverSagas.selectAllSaga)]);\n\n        case 2:\n        case \"end\":\n          return _context.stop();\n      }\n    }\n  }, _marked, this);\n}\n\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(rootSaga, \"rootSaga\", \"/Users/shawnsheehan/workspace/naover/src/sagas/rootSaga.js\");\n  leaveModule(module);\n})();\n\n;",
+    "map": {
+      "mappings": [
+        {
+          "generated": { "line": 10, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 12, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 3, "column": 0 }
+        },
+        {
+          "generated": { "line": 14, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 4, "column": 0 }
+        },
+        {
+          "name": "rootSaga",
+          "generated": { "line": 28, "column": 26 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 25 }
+        },
+        {
+          "generated": { "line": 30, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "name": "rootSaga",
+          "generated": { "line": 30, "column": 9 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 25 }
+        },
+        {
+          "generated": { "line": 30, "column": 17 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 31, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 32, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 33, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 34, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 35, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 2 }
+        },
+        {
+          "generated": { "line": 36, "column": 17 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 8 }
+        },
+        {
+          "generated": { "line": 36, "column": 35 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 36 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 36, "column": 61 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 72 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 26 }
+        },
+        {
+          "name": "ENTITIES_FETCH_REQUEST",
+          "generated": { "line": 36, "column": 73 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 27 }
+        },
+        {
+          "generated": { "line": 36, "column": 95 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "name": "initSaga",
+          "generated": { "line": 36, "column": 97 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 51 }
+        },
+        {
+          "generated": { "line": 36, "column": 118 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 14, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 119 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 121 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 36, "column": 146 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 157 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 26 }
+        },
+        {
+          "name": "SELECT_INITIAL_REQUEST",
+          "generated": { "line": 36, "column": 158 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 27 }
+        },
+        {
+          "generated": { "line": 36, "column": 180 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 4 }
+        },
+        {
+          "name": "selectInitSaga",
+          "generated": { "line": 36, "column": 182 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 51 }
+        },
+        {
+          "generated": { "line": 36, "column": 209 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 15, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 210 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 212 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 36, "column": 237 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 248 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 26 }
+        },
+        {
+          "name": "SELECT_DAY_REQUEST",
+          "generated": { "line": 36, "column": 249 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 27 }
+        },
+        {
+          "generated": { "line": 36, "column": 267 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 4 }
+        },
+        {
+          "name": "selectDaySaga",
+          "generated": { "line": 36, "column": 269 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 47 }
+        },
+        {
+          "generated": { "line": 36, "column": 295 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 16, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 296 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 298 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 36, "column": 323 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 334 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 26 }
+        },
+        {
+          "name": "SELECT_CAMERA_REQUEST",
+          "generated": { "line": 36, "column": 335 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 27 }
+        },
+        {
+          "generated": { "line": 36, "column": 356 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "name": "selectCamSaga",
+          "generated": { "line": 36, "column": 358 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 50 }
+        },
+        {
+          "generated": { "line": 36, "column": 384 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 17, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 385 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 387 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 4 }
+        },
+        {
+          "name": "ActionTypes",
+          "generated": { "line": 36, "column": 412 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 15 }
+        },
+        {
+          "generated": { "line": 36, "column": 423 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 26 }
+        },
+        {
+          "name": "SELECT_ALL_REQUEST",
+          "generated": { "line": 36, "column": 424 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 27 }
+        },
+        {
+          "generated": { "line": 36, "column": 442 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 4 }
+        },
+        {
+          "name": "selectAllSaga",
+          "generated": { "line": 36, "column": 444 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 47 }
+        },
+        {
+          "generated": { "line": 36, "column": 470 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 18, "column": 4 }
+        },
+        {
+          "generated": { "line": 36, "column": 471 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 12 }
+        },
+        {
+          "generated": { "line": 36, "column": 472 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 8 }
+        },
+        {
+          "generated": { "line": 36, "column": 473 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 13, "column": 2 }
+        },
+        {
+          "generated": { "line": 38, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 39, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 40, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 41, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 42, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 43, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "generated": { "line": 44, "column": 0 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 15 }
+        },
+        {
+          "name": "rootSaga",
+          "generated": { "line": 57, "column": 26 },
+          "source": "../src/sagas/rootSaga.js",
+          "original": { "line": 12, "column": 25 }
+        }
+      ],
+      "sources": {
+        "../src/sagas/rootSaga.js": "import { all, takeLatest } from 'redux-saga/effects';\n\nimport * as ActionTypes from '../utils/ActionTypes';\nimport {\n  initSaga,\n  selectDaySaga,\n  selectAllSaga,\n  selectCamSaga,\n  selectInitSaga\n} from './naoverSagas';\n\nexport default function* rootSaga() {\n  yield all([\n    takeLatest(ActionTypes.ENTITIES_FETCH_REQUEST, initSaga),\n    takeLatest(ActionTypes.SELECT_INITIAL_REQUEST, selectInitSaga),\n    takeLatest(ActionTypes.SELECT_DAY_REQUEST, selectDaySaga),\n    takeLatest(ActionTypes.SELECT_CAMERA_REQUEST, selectCamSaga),\n    takeLatest(ActionTypes.SELECT_ALL_REQUEST, selectAllSaga)\n  ]);\n}\n"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "ec08af66fad51338377711666a501b95",
+  "cacheData": { "env": {} }
+}

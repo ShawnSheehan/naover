@@ -20,7 +20,7 @@ export const sols = state =>
 
 /* Image Selector */
 export const getImage = id => state =>
-  state.naover.entities.find(o => o.id === Number(id));
+  state.naover.entities.find(o => o.id == Number(id));
 
 /* Filter By Sol (Day) */
 export const getSol = sol => state =>

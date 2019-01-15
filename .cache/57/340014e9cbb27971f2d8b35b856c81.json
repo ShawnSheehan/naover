@@ -1,0 +1,20 @@
+{
+  "id": "../src/assets/mars_planet.png",
+  "dependencies": [
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/.babelrc",
+      "includedInParent": true,
+      "mtime": 1547532003651
+    },
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/package.json",
+      "includedInParent": true,
+      "mtime": 1547584654152
+    }
+  ],
+  "generated": {
+    "js": "module.exports = \"/6026836876d535493da9a0a05a76ea77.png\";"
+  },
+  "hash": "6fbdc3b2bb5efef4a4dc06f175d4db35",
+  "cacheData": { "env": {} }
+}

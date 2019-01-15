@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { instanceOf } from 'prop-types';
-import { hot } from 'react-hot-loader';
 
 import App from './app';
 
@@ -17,7 +16,7 @@ const Root = ({ store }) => (
 );
 
 Root.propTypes = {
-  store: instanceOf(Object).isRequired,
+  store: instanceOf(Object).isRequired
 };
 
-export default hot(module)(Root);
+export default Root;

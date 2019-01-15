@@ -11,3 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 });
+
+if (module.hot) {
+  module.hot.accept(() => {
+    window.location.reload();
+  });
+}

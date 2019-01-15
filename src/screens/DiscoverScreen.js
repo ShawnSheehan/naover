@@ -91,8 +91,8 @@ const DiscoverScreen = props => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const id = ownProps.match.params.id;
+const mapStateToProps = state => {
+  const id = JSON.parse(localStorage.getItem('id'));
   const image = getImage(id)(state);
   return {
     id,

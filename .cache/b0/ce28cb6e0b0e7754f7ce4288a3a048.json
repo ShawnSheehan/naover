@@ -1,0 +1,342 @@
+{
+  "id": "../src/routes/index.js",
+  "dependencies": [
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/.babelrc",
+      "includedInParent": true,
+      "mtime": 1547532003651
+    },
+    {
+      "name": "/Users/shawnsheehan/workspace/naover/package.json",
+      "includedInParent": true,
+      "mtime": 1547584654152
+    },
+    {
+      "name": "react-hot-loader",
+      "parent": "/Users/shawnsheehan/workspace/naover/src/routes/index.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/react-hot-loader/index.js"
+    },
+    {
+      "name": "react",
+      "loc": { "line": 1, "column": 18 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/routes/index.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/react/index.js"
+    },
+    {
+      "name": "react-router-dom",
+      "loc": { "line": 2, "column": 30 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/routes/index.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/node_modules/react-router-dom/es/index.js"
+    },
+    {
+      "name": "../screens/IntroScreen",
+      "loc": { "line": 4, "column": 24 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/routes/index.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/src/screens/IntroScreen.js"
+    },
+    {
+      "name": "../screens/DiscoverScreen",
+      "loc": { "line": 5, "column": 27 },
+      "parent": "/Users/shawnsheehan/workspace/naover/src/routes/index.js",
+      "resolved": "/Users/shawnsheehan/workspace/naover/src/screens/DiscoverScreen.js"
+    }
+  ],
+  "generated": {
+    "js": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.RouteMap = void 0;\n\nvar _react = _interopRequireDefault(require(\"react\"));\n\nvar _reactRouterDom = require(\"react-router-dom\");\n\nvar _IntroScreen = _interopRequireDefault(require(\"../screens/IntroScreen\"));\n\nvar _DiscoverScreen = _interopRequireDefault(require(\"../screens/DiscoverScreen\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n(function () {\n  var enterModule = require('react-hot-loader').enterModule;\n\n  enterModule && enterModule(module);\n})();\n\nvar RouteMap = function RouteMap() {\n  return _react.default.createElement(\"div\", null, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {\n    path: \"/\",\n    exact: true,\n    component: _IntroScreen.default\n  }), _react.default.createElement(_reactRouterDom.Route, {\n    path: \"/discover/:id\",\n    exact: true,\n    component: _DiscoverScreen.default\n  })));\n};\n\nexports.RouteMap = RouteMap;\n;\n\n(function () {\n  var reactHotLoader = require('react-hot-loader').default;\n\n  var leaveModule = require('react-hot-loader').leaveModule;\n\n  if (!reactHotLoader) {\n    return;\n  }\n\n  reactHotLoader.register(RouteMap, \"RouteMap\", \"/Users/shawnsheehan/workspace/naover/src/routes/index.js\");\n  leaveModule(module);\n})();\n\n;",
+    "map": {
+      "mappings": [
+        {
+          "generated": { "line": 8, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 1, "column": 0 }
+        },
+        {
+          "generated": { "line": 10, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 2, "column": 0 }
+        },
+        {
+          "generated": { "line": 12, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 4, "column": 0 }
+        },
+        {
+          "generated": { "line": 14, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 5, "column": 0 }
+        },
+        {
+          "generated": { "line": 24, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 7 }
+        },
+        {
+          "name": "RouteMap",
+          "generated": { "line": 24, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 13 }
+        },
+        {
+          "generated": { "line": 24, "column": 12 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 21 }
+        },
+        {
+          "generated": { "line": 24, "column": 15 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 24 }
+        },
+        {
+          "name": "RouteMap",
+          "generated": { "line": 24, "column": 24 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 13 }
+        },
+        {
+          "generated": { "line": 24, "column": 32 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 24 }
+        },
+        {
+          "generated": { "line": 25, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 24 }
+        },
+        {
+          "generated": { "line": 25, "column": 9 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 8, "column": 2 }
+        },
+        {
+          "generated": { "line": 25, "column": 51 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 9, "column": 4 }
+        },
+        {
+          "generated": { "line": 25, "column": 80 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 9, "column": 5 }
+        },
+        {
+          "generated": { "line": 25, "column": 102 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 9, "column": 4 }
+        },
+        {
+          "generated": { "line": 25, "column": 110 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 6 }
+        },
+        {
+          "generated": { "line": 25, "column": 139 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 7 }
+        },
+        {
+          "generated": { "line": 25, "column": 160 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 6 }
+        },
+        {
+          "generated": { "line": 26, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 13 }
+        },
+        {
+          "generated": { "line": 26, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 13 }
+        },
+        {
+          "generated": { "line": 26, "column": 8 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 17 }
+        },
+        {
+          "generated": { "line": 26, "column": 10 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 18 }
+        },
+        {
+          "generated": { "line": 26, "column": 13 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 6 }
+        },
+        {
+          "generated": { "line": 27, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 22 }
+        },
+        {
+          "generated": { "line": 27, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 22 }
+        },
+        {
+          "generated": { "line": 27, "column": 9 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 27 }
+        },
+        {
+          "generated": { "line": 27, "column": 15 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 6 }
+        },
+        {
+          "generated": { "line": 28, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 28 }
+        },
+        {
+          "generated": { "line": 28, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 28 }
+        },
+        {
+          "generated": { "line": 28, "column": 13 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 37 }
+        },
+        {
+          "name": "IntroScreen",
+          "generated": { "line": 28, "column": 15 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 39 }
+        },
+        {
+          "generated": { "line": 29, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 10, "column": 6 }
+        },
+        {
+          "generated": { "line": 29, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 9, "column": 4 }
+        },
+        {
+          "generated": { "line": 29, "column": 6 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 6 }
+        },
+        {
+          "generated": { "line": 29, "column": 35 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 7 }
+        },
+        {
+          "generated": { "line": 29, "column": 56 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 6 }
+        },
+        {
+          "generated": { "line": 30, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 13 }
+        },
+        {
+          "generated": { "line": 30, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 13 }
+        },
+        {
+          "generated": { "line": 30, "column": 8 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 17 }
+        },
+        {
+          "generated": { "line": 30, "column": 10 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 18 }
+        },
+        {
+          "generated": { "line": 30, "column": 25 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 6 }
+        },
+        {
+          "generated": { "line": 31, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 34 }
+        },
+        {
+          "generated": { "line": 31, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 34 }
+        },
+        {
+          "generated": { "line": 31, "column": 9 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 39 }
+        },
+        {
+          "generated": { "line": 31, "column": 15 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 6 }
+        },
+        {
+          "generated": { "line": 32, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 40 }
+        },
+        {
+          "generated": { "line": 32, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 40 }
+        },
+        {
+          "generated": { "line": 32, "column": 13 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 49 }
+        },
+        {
+          "name": "DiscoverScreen",
+          "generated": { "line": 32, "column": 15 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 51 }
+        },
+        {
+          "generated": { "line": 33, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 11, "column": 6 }
+        },
+        {
+          "generated": { "line": 33, "column": 4 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 9, "column": 4 }
+        },
+        {
+          "generated": { "line": 33, "column": 5 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 8, "column": 2 }
+        },
+        {
+          "generated": { "line": 33, "column": 6 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 24 }
+        },
+        {
+          "generated": { "line": 34, "column": 0 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 24 }
+        },
+        {
+          "generated": { "line": 34, "column": 1 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 7 }
+        },
+        {
+          "name": "RouteMap",
+          "generated": { "line": 48, "column": 26 },
+          "source": "../src/routes/index.js",
+          "original": { "line": 7, "column": 13 }
+        }
+      ],
+      "sources": {
+        "../src/routes/index.js": "import React from 'react';\nimport { Route, Switch } from 'react-router-dom';\n\nimport IntroScreen from '../screens/IntroScreen';\nimport DiscoverScreen from '../screens/DiscoverScreen';\n\nexport const RouteMap = () => (\n  <div>\n    <Switch>\n      <Route path=\"/\" exact component={IntroScreen} />\n      <Route path=\"/discover/:id\" exact component={DiscoverScreen} />\n    </Switch>\n  </div>\n);\n"
+      },
+      "lineCount": null
+    }
+  },
+  "hash": "dd4ca69edbb4e28b15baedd4ed7b4197",
+  "cacheData": { "env": {} }
+}

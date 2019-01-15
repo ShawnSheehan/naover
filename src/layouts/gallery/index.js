@@ -23,7 +23,7 @@ const Gallery = props => {
   return (
     <GalleryWrapper loading={loading}>
       {data.slice(0, 10).map(d => (
-        <Tile image={d.img_src} key={d.id} route={`/discover/${d.id}`} />
+        <Tile image={d.img_src} key={d.id} id={d.id} />
       ))}
       <Tile />
       <Tile />
