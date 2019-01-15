@@ -4,6 +4,10 @@ export const initEntities = () => ({
   type: ActionTypes.ENTITIES_FETCH_REQUEST
 });
 
+export const selectInitial = () => ({
+  type: ActionTypes.SELECT_INITIAL_REQUEST
+});
+
 export const selectDay = sol => ({
   type: ActionTypes.SELECT_DAY_REQUEST,
   sol

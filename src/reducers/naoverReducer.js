@@ -2,7 +2,8 @@ import * as ActionTypes from '../utils/ActionTypes';
 
 const initalState = {
   loading: false,
-  error: null
+  error: null,
+  selected: []
 };
 
 export default function(state = initalState, action) {
@@ -27,6 +28,26 @@ export default function(state = initalState, action) {
         loading: false
       };
 
+    case ActionTypes.SELECT_INITIAL_REQUEST:
+      return {
+        ...state,
+        loading: true
+      };
+
+    case ActionTypes.SELECT_INITIAL_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        selected: action.selected
+      };
+
+    case ActionTypes.SELECT_INITIAL_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+
     case ActionTypes.SELECT_DAY_REQUEST:
       return {
         ...state,
@@ -37,7 +58,7 @@ export default function(state = initalState, action) {
       return {
         ...state,
         loading: false,
-        entities: action.entities
+        selected: action.selected
       };
 
     case ActionTypes.SELECT_DAY_FAILURE:
@@ -57,7 +78,7 @@ export default function(state = initalState, action) {
       return {
         ...state,
         loading: false,
-        entities: action.entities
+        selected: action.selected
       };
 
     case ActionTypes.SELECT_CAMERA_FAILURE:

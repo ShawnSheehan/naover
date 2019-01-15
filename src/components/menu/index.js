@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 
 import Box from '../../layouts/box';
@@ -103,29 +104,42 @@ class Menu extends Component {
 
   render() {
     const { active } = this.state;
-    const { cameras, sols, selectDay, selectAll, resetAll } = this.props;
+    const {
+      cameras,
+      sols,
+      selectDay,
+      selectAll,
+      resetAll,
+      selectCam,
+      location
+    } = this.props;
+    const { pathname } = location;
 
+    // I Have Set The Menu To Only Appear On Gallery View For Now
     return (
       <React.Fragment>
         <IconWrapper onClick={this.onActive} roll={active}>
           <i className="fas fa-plus" />
         </IconWrapper>
-        <MenuWrapper roll={active}>
-          <Box title="Rover Analytics" subtitle={Date.now()}>
-            <Chart
-              cam={cameras}
-              sol={sols}
-              selectDay={selectDay}
-              selectAll={selectAll}
-            />
-          </Box>
-          <div className="reset-icon">
-            <IconButton icon="fas fa-sync-alt" onAction={resetAll} />
-          </div>
-        </MenuWrapper>
+        {!pathname.includes('discover') && active && (
+          <MenuWrapper roll={active} pathname={pathname}>
+            <Box title="Rover Analytics" subtitle={Date.now()}>
+              <Chart
+                cam={cameras}
+                sol={sols}
+                selectDay={selectDay}
+                selectAll={selectAll}
+                selectCam={selectCam}
+              />
+            </Box>
+            <div className="reset-icon">
+              <IconButton icon="fas fa-sync-alt" onAction={resetAll} />
+            </div>
+          </MenuWrapper>
+        )}
       </React.Fragment>
     );
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

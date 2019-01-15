@@ -17,14 +17,25 @@ export default class Chart extends Component {
     selectDay(e.name);
   };
 
+  onCamSelect = e => {
+    const { selectCam } = this.props;
+
+    this.setState({ cam: e.name });
+
+    selectCam(e.name);
+  };
+
   onAllSelect = e => {
     const { sol, cam } = this.state;
     const { selectAll } = this.props;
 
     this.setState({ cam: e.name });
 
-    if (sol.length && cam.length) {
+    if (sol && cam) {
       selectAll(sol, cam);
+      this.setState({ sol: '', cam: '' });
+    } else {
+      this.onCamSelect(e);
     }
   };
 

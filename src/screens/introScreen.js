@@ -6,21 +6,21 @@ import Spinner from '../components/Spinner';
 import Gallery from '../layouts/gallery';
 
 const IntroScreen = props => {
-  const { entities, loading } = props;
+  const { selected, loading } = props;
   const filter = 'camera';
 
-  if (!entities) {
+  if (!selected) {
     return <Spinner />;
   }
   return (
     <Dashboard filter={filter}>
-      <Gallery data={entities} loading={loading} />
+      <Gallery data={selected} loading={loading} />
     </Dashboard>
   );
 };
 
 const mapStateToProps = state => ({
-  entities: state.naover.entities || [],
+  selected: state.naover.selected || [],
   loading: state.naover.loading
 });
 

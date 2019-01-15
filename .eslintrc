@@ -43,7 +43,8 @@
     "import/named": 0,
     "no-underscore-dangle": 0,
     "prefer-destructuring": 0,
-    "camelcase": 0
+    "camelcase": 0,
+    "eqeqeq": 0
   },
   "overrides": [
     {

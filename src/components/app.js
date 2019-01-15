@@ -18,13 +18,22 @@ class App extends Component {
   }
 
   render() {
-    const { selectAll, selectDay, onLoad, cameras, sols } = this.props;
+    const {
+      selectAll,
+      selectDay,
+      onLoad,
+      selectCamera,
+      cameras,
+      sols
+    } = this.props;
+
     return (
       <Container>
         <Header brand="naover" />
         <RouteMap />
         <Menu
           selectDay={selectDay}
+          selectCam={selectCamera}
           selectAll={selectAll}
           resetAll={onLoad}
           cameras={cameras}
@@ -47,8 +56,8 @@ export default withRouter(
     {
       onLoad: Actions.initEntities,
       selectDay: Actions.selectDay,
-      selectAll: Actions.selectAll,
-      resetAll: Actions.initEntities
+      selectCamera: Actions.selectCamera,
+      selectAll: Actions.selectAll
     }
   )(App)
 );
