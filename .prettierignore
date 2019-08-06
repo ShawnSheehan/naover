@@ -1,4 +1,0 @@
-src/**/*.md
-node_modules
-.cache
-dist

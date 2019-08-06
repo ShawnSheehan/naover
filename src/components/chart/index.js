@@ -1,72 +1,58 @@
-import React, { Component } from 'react';
-import { PieChart, Pie, Legend } from 'recharts';
+import React, { useState } from "react";
+import { PieChart, Pie, Legend } from "recharts";
 
-export default class Chart extends Component {
-  static propTypes = {};
+const Chart = ({ selectDay, selectCam, selectAll }) => {
+    const [cam, setCam] = useState("");
+    const [sol, setSol] = useState("");
 
-  state = {
-    cam: '',
-    sol: ''
-  };
+    const onDaySelect = e => {
+        setSol(e.name);
+        selectDay(e.name);
+    };
 
-  onDaySelect = e => {
-    const { selectDay } = this.props;
+    const onCamSelect = e => {
+        setCam(e.name);
+        selectCam(e.name);
+    };
 
-    this.setState({ sol: e.name });
+    const onAllSelect = e => {
+        setCam(e.name);
 
-    selectDay(e.name);
-  };
-
-  onCamSelect = e => {
-    const { selectCam } = this.props;
-
-    this.setState({ cam: e.name });
-
-    selectCam(e.name);
-  };
-
-  onAllSelect = e => {
-    const { sol, cam } = this.state;
-    const { selectAll } = this.props;
-
-    this.setState({ cam: e.name });
-
-    if (sol && cam) {
-      selectAll(sol, cam);
-      this.setState({ sol: '', cam: '' });
-    } else {
-      this.onCamSelect(e);
-    }
-  };
-
-  render() {
-    const { sol, cam } = this.props;
+        if (sol && cam) {
+            selectAll(sol, cam);
+            selectDay(e.name);
+            setCam(e.name);
+        } else {
+            onCamSelect(e);
+        }
+    };
 
     return (
-      <PieChart width={500} height={500}>
-        <Legend verticalAlign="top" height={36} width={450} />
-        <Pie
-          data={cam}
-          cx={250}
-          cy={250}
-          outerRadius={120}
-          fill="#8884d8"
-          onClick={this.onAllSelect}
-          label
-          dataKey="value"
-        />
-        <Pie
-          data={sol}
-          cx={250}
-          cy={250}
-          innerRadius={140}
-          outerRadius={180}
-          fill="#82ca9d"
-          label
-          onClick={this.onDaySelect}
-          dataKey="value"
-        />
-      </PieChart>
+        <PieChart width={500} height={500}>
+            <Legend verticalAlign="top" height={36} width={450} />
+            <Pie
+                data={cam}
+                cx={250}
+                cy={250}
+                outerRadius={120}
+                fill="#8884d8"
+                onClick={() => onAllSelect()}
+                label
+                dataKey="value"
+            />
+            <Pie
+                data={sol}
+                cx={250}
+                cy={250}
+                innerRadius={140}
+                outerRadius={180}
+                fill="#82ca9d"
+                label
+                onClick={() => onDaySelect()}
+                dataKey="value"
+            />
+        </PieChart>
     );
-  }
-}
+};
+
+export default Chart;

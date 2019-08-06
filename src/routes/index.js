@@ -1,14 +1,10 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { IntroPage, DiscoverPage } from "Pages";
 
-import IntroScreen from '../screens/IntroScreen';
-import DiscoverScreen from '../screens/DiscoverScreen';
-
-export const RouteMap = () => (
-  <div>
+export const Routes = () => (
     <Switch>
-      <Route path="/" exact component={IntroScreen} />
-      <Route path="/discover/:id" exact component={DiscoverScreen} />
+        <Route path="/" exact component={IntroPage} />
+        <Route path="/discover/:id" exact component={DiscoverPage} />
     </Switch>
-  </div>
 );

@@ -1,20 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import configureStore from "Store/configureStore";
+import Root from "./root";
 
-import configureStore from './store';
-import Root from './components/root';
+const { store, persist } = configureStore();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const { store, persistor } = configureStore();
-
-  ReactDOM.render(
-    <Root store={store} persistor={persistor} />,
-    document.getElementById('root')
-  );
+document.addEventListener("DOMContentLoaded", () => {
+    ReactDOM.render(
+        <Root store={store} persist={persist} />,
+        document.getElementById("root"),
+    );
 });
 
 if (module.hot) {
-  module.hot.accept(() => {
-    window.location.reload();
-  });
+    module.hot.accept(() => {
+        window.location.reload();
+    });
 }

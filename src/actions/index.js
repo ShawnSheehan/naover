@@ -1,25 +1,17 @@
-import * as ActionTypes from '../utils/ActionTypes';
+import * as ActionTypes from "Constants/ActionTypes";
 
-export const initEntities = () => ({
-  type: ActionTypes.ENTITIES_FETCH_REQUEST
+export const init = (rover, sol) => ({
+    type: ActionTypes.INIT_REQUEST,
+    rover,
+    sol,
 });
 
-export const selectInitial = () => ({
-  type: ActionTypes.SELECT_INITIAL_REQUEST
+export const select = obj => ({
+    type: ActionTypes.SELECT_REQUEST,
+    obj,
 });
 
-export const selectDay = sol => ({
-  type: ActionTypes.SELECT_DAY_REQUEST,
-  sol
-});
-
-export const selectCamera = cam => ({
-  type: ActionTypes.SELECT_CAMERA_REQUEST,
-  cam
-});
-
-export const selectAll = (sol, cam) => ({
-  type: ActionTypes.SELECT_ALL_REQUEST,
-  sol,
-  cam
+export const update = theme => ({
+    type: ActionTypes.THEME_UPDATE,
+    theme,
 });
