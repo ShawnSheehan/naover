@@ -2,11 +2,11 @@
 
 ### NASA Curiosity Rover Images Built With React
 
-![Imgur Image]([Imgur](https://i.imgur.com/4Ay6DgH.png)
+![Imgur Image](https://i.imgur.com/4Ay6DgH.png)
 
-![Imgur Image]([Imgur]([Imgur](https://i.imgur.com/ZJ5qCuJ.png)
+![Imgur Image](https://i.imgur.com/ZJ5qCuJ.png)
 
-![Imgur Image]([Imgur]([Imgur](https://i.imgur.com/WOI4Iby.png)
+![Imgur Image](https://i.imgur.com/WOI4Iby.png)
 
 ## Development
 
