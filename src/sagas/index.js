@@ -13,6 +13,18 @@ export function* selectSaga(action) {
     }
 }
 
+function* fetchSolSaga(action) {
+    const { data } = yield call(initRoverData, action.rover, action.sol);
+    try {
+        yield put({
+            type: ActionTypes.FETCH_SUCCESS,
+            payload: data.photos,
+        });
+    } catch (error) {
+        yield put({ type: ActionTypes.FETCH_FAILURE, error });
+    }
+}
+
 function* initSaga(action) {
     const { data } = yield call(initRoverData, action.rover, action.sol);
     try {
@@ -28,6 +40,7 @@ function* initSaga(action) {
 export default function* rootSaga() {
     yield all([
         takeLatest(ActionTypes.INIT_REQUEST, initSaga),
+        takeLatest(ActionTypes.FETCH_REQUEST, fetchSolSaga),
         takeLatest(ActionTypes.SELECT_REQUEST, selectSaga),
     ]);
 }

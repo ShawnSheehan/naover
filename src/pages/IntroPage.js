@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Section, SectionModule } from "Components/layouts";
 import { Label, Tile } from "Components";
-import { select, init } from "Actions";
+import { select, fetch } from "Actions";
 
 const IntroPage = ({ filter, data, loading, history, selectObj, newSol }) => {
     const [sol, setSol] = useState(2460);
@@ -38,10 +38,10 @@ const IntroPage = ({ filter, data, loading, history, selectObj, newSol }) => {
                     />
                 ))}
                 <Tile loading={loading} onClick={() => handlePage("Prev")}>
-                    <MdChevronLeft size="2em" />
+                    <MdChevronLeft size="4em" />
                 </Tile>
                 <Tile loading={loading} onClick={() => handlePage("Next")}>
-                    <MdChevronRight size="2em" />
+                    <MdChevronRight size="4em" />
                 </Tile>
             </SectionModule>
         </Section>
@@ -64,6 +64,6 @@ const mapStateToProps = state => ({
 export default withRouter(
     connect(
         mapStateToProps,
-        { selectObj: select, newSol: init },
+        { selectObj: select, newSol: fetch },
     )(IntroPage),
 );

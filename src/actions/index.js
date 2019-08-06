@@ -6,6 +6,12 @@ export const init = (rover, sol) => ({
     sol,
 });
 
+export const fetch = (rover, sol) => ({
+    type: ActionTypes.FETCH_REQUEST,
+    rover,
+    sol,
+});
+
 export const select = obj => ({
     type: ActionTypes.SELECT_REQUEST,
     obj,

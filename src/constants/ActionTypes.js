@@ -6,4 +6,8 @@ export const SELECT_REQUEST = "SELECT_REQUEST";
 export const SELECT_SUCCESS = "SELECT_SUCCESS";
 export const SELECT_FAILURE = "SELECT_FAILURE";
 
+export const FETCH_REQUEST = "FETCH_REQUEST";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
+
 export const THEME_UPDATE = "THEME_UPDATE";
