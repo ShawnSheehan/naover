@@ -35,6 +35,6 @@ export const TileWrapper = styled.div`
     animation: ${({ loading }) => (loading ? rotate : rotateOff)} 2s linear
         infinite;
     svg {
-        fill: ${({ theme }) => theme.primary} !important;
+        fill: ${({ theme }) => theme.common.white};
     }
 `;

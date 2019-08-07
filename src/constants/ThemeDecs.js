@@ -3,6 +3,7 @@ import LunarBg from "Assets/imgs/lunar_moon.png";
 
 const ThemeDecs = {
     lunar: {
+        common: { black: "#000000", white: "#ffffff" },
         background: "rgba(30,39,46,0.8)",
         primary: "#354f55",
         secondary: "#4b6464",
@@ -11,6 +12,7 @@ const ThemeDecs = {
     },
 
     mars: {
+        common: { black: "#000000", white: "#ffffff" },
         background: "rgba(165,50,55,0.8)",
         primary: "#a53237",
         secondary: "#bb3a40",

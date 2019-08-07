@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     height: 100vh;
     font-family: 'Lato', sans-serif;
-    color: #4b6464;
+    color: ${props => props.theme.primary};
   }
 
   ol,
@@ -45,15 +45,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #4b6464;
+    color: ${props => props.theme.primary};
     text-decoration: none;
-  }
-
-  .container {
-    background: url('../assets/mars_planet.png') no-repeat;
-    background-size: contain;
-    background-position: bottom -400px center;
-    background-color: rgba(30, 39, 46, 0.8);
   }
 
   .recharts-legend-wrapper {

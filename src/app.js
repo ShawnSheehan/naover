@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { connect } from "react-redux";
 import { GlobalStyle } from "Constants";
 import { Container } from "Components/layouts";
@@ -6,13 +6,15 @@ import { Header, Menu } from "Components";
 import { Routes } from "Routes";
 import { fetch } from "Actions";
 
-const App = ({ onLoad }) => {
+const App = ({ onLoad, data }) => {
     const [rover, setRover] = useState("curiosity");
     const [sol, setSol] = useState("2460");
 
-    useEffect(() => {
-        onLoad(rover, sol);
-    }, []);
+    useLayoutEffect(() => {
+        if (!data.length) {
+            onLoad(rover, sol);
+        }
+    }, [data]);
 
     return (
         <React.Fragment>
@@ -26,7 +28,11 @@ const App = ({ onLoad }) => {
     );
 };
 
+const mapStateToProps = state => ({
+    data: state.entities.data,
+});
+
 export default connect(
-    null,
+    mapStateToProps,
     { onLoad: fetch },
 )(App);

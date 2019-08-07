@@ -23,7 +23,7 @@ const Menu = ({ location, history }) => {
             {!pathname.includes("discover") && active && (
                 <MenuWrapper active={active}>
                     <Heading>Rover Analytics</Heading>
-                    <SectionModule style={{ flex: 2 }}>Menu</SectionModule>
+                    <SectionModule />
                     <Subtitle>{Date(Date.now().toString())}</Subtitle>
                     <div className="reset-icon">
                         <MdSync size="2em" />
