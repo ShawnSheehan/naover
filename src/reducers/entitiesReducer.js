@@ -10,15 +10,6 @@ const initialState = {
 
 const entitiesReducer = (state = initialState, action) =>
     match(action.type)
-        .equals(ActionTypes.INIT_REQUEST)
-        .then({ ...state, loading: true })
-
-        .equals(ActionTypes.INIT_SUCCESS)
-        .then({ ...state, data: action.payload, loading: false })
-
-        .equals(ActionTypes.INIT_FAILURE)
-        .then({ ...state, errors: action.error, loading: false })
-
         .equals(ActionTypes.FETCH_REQUEST)
         .then({ ...state, loading: true })
 

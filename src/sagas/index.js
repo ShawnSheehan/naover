@@ -1,4 +1,4 @@
-import { takeLatest, call, put, select, all, fork } from "redux-saga/effects";
+import { takeLatest, call, put, all } from "redux-saga/effects";
 import { initRoverData } from "Services/api";
 import * as ActionTypes from "Constants/ActionTypes";
 
@@ -13,7 +13,7 @@ export function* selectSaga(action) {
     }
 }
 
-function* fetchSolSaga(action) {
+function* fetchSaga(action) {
     const { data } = yield call(initRoverData, action.rover, action.sol);
     try {
         yield put({
@@ -25,22 +25,9 @@ function* fetchSolSaga(action) {
     }
 }
 
-function* initSaga(action) {
-    const { data } = yield call(initRoverData, action.rover, action.sol);
-    try {
-        yield put({
-            type: ActionTypes.INIT_SUCCESS,
-            payload: data.photos,
-        });
-    } catch (error) {
-        yield put({ type: ActionTypes.INIT_FAILURE, error });
-    }
-}
-
 export default function* rootSaga() {
     yield all([
-        takeLatest(ActionTypes.INIT_REQUEST, initSaga),
-        takeLatest(ActionTypes.FETCH_REQUEST, fetchSolSaga),
+        takeLatest(ActionTypes.FETCH_REQUEST, fetchSaga),
         takeLatest(ActionTypes.SELECT_REQUEST, selectSaga),
     ]);
 }

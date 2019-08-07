@@ -7,7 +7,7 @@ import { Section, SectionModule } from "Components/layouts";
 import { Label, Tile } from "Components";
 import { select, fetch } from "Actions";
 
-const IntroPage = ({ filter, data, loading, history, selectObj, newSol }) => {
+const IntroPage = ({ filter, data, loading, history, selectObj, onLoad }) => {
     const [sol, setSol] = useState(2460);
     const [rover, setRover] = useState("curiosity");
 
@@ -17,14 +17,17 @@ const IntroPage = ({ filter, data, loading, history, selectObj, newSol }) => {
     }
 
     function handlePage(curr) {
-        if (curr !== "Prev") {
+        if (curr !== "Prev" && sol !== 2460) {
             setSol(sol + 1);
-        } else {
-            setSol(sol - 1);
+            onLoad(rover, sol);
         }
-
-        newSol(rover, sol);
+        if (curr !== "Next") {
+            setSol(sol - 1);
+            onLoad(rover, sol);
+        }
+        return;
     }
+
     return (
         <Section>
             <Label title={`nasa curiosity rover api ${filter}`} />
@@ -64,6 +67,6 @@ const mapStateToProps = state => ({
 export default withRouter(
     connect(
         mapStateToProps,
-        { selectObj: select, newSol: fetch },
+        { selectObj: select, onLoad: fetch },
     )(IntroPage),
 );

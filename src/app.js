@@ -4,14 +4,14 @@ import { GlobalStyle } from "Constants";
 import { Container } from "Components/layouts";
 import { Header, Menu } from "Components";
 import { Routes } from "Routes";
-import { init } from "Actions";
+import { fetch } from "Actions";
 
-const App = ({ init }) => {
+const App = ({ onLoad }) => {
     const [rover, setRover] = useState("curiosity");
     const [sol, setSol] = useState("2460");
 
     useEffect(() => {
-        init(rover, sol);
+        onLoad(rover, sol);
     }, []);
 
     return (
@@ -28,5 +28,5 @@ const App = ({ init }) => {
 
 export default connect(
     null,
-    { init },
+    { onLoad: fetch },
 )(App);
